@@ -1,21 +1,23 @@
-#productCarousel, #productCarousel img{
-    width: 240px;
+.carousel, .carousel img{
+    width: 445px;
     height: 320px;
 }
 
-#productCarousel .carousel-indicators{
+.carousel .carousel-indicators{
+    position: absolute;
+    left: -325px;
     top: auto;
     bottom: -25px;
 }
 
-#productCarousel .carousel-indicators li{
+.carousel .carousel-indicators li{
     height: 30px;
     width: 30px;
     border-radius: 100%;
     transition: all 0.4s;
 }
 
-#productCarousel .carousel-indicators .active{
+.carousel .carousel-indicators .active{
     border: 4px solid rgb(189, 172, 164);
     transition: all 0.3s;
 }
