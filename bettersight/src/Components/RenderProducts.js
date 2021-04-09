@@ -15,19 +15,19 @@ export default function RenderProducts() {
                         </ol>
                         <div className="carousel-inner">
                             <div className="carousel-item active">
-                            <img src={item.defaultImage} alt={item.title}/>
+                                <img src={item.defaultImage} alt={item.title}/>
                             </div>
                             <div className="carousel-item">
-                            <img src={item.secondImage} alt={item.title}/>
+                                <img src={item.secondImage} alt={item.title}/>
                             </div>
                             <div className="carousel-item">
-                            <img src={item.thirdImage} alt={item.title}/>
+                                <img src={item.thirdImage} alt={item.title}/>
                             </div>
                         </div>
                     </div> 
                 </div>
 
-                <div className="title-price-like_content">
+                <div className="title-price-like_content mb-5">
                     <div className="row">
                         <div className="col-12 wishlist-button">
                             <span className="fa fa-lg fa-heart"></span>
