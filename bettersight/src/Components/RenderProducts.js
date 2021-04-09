@@ -5,7 +5,7 @@ export default function RenderProducts() {
 
     const renderGoods = products.map((item) =>{
         return(
-            <div className="col-12 col-sm-6 col-lg-4" key={item.id}>
+            <div className="col-12 col-sm-6 col-lg-4 product-container" key={item.id}>
                 <div className="content">
                     <div id={'product-'+item.id} className="carousel slide carousel-fade">
                         <ol className="carousel-indicators">
@@ -41,6 +41,12 @@ export default function RenderProducts() {
                         <div className="col-6">
                             <span>{item.price}</span>
                         </div>
+                    </div>
+                </div>
+
+                <div className="add-cart-btn">
+                    <div className="col-12 text-center my-1">
+                        <button className="btn btn-outline-info btn-lg text-center">Add to cart</button>
                     </div>
                 </div>
             </div>
