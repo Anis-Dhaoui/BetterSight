@@ -30,23 +30,21 @@ export default function RenderProducts() {
                 <div className="title-price-like_content mb-5">
                     <div className="row">
                         <div className="col-12 wishlist-button">
-                            <span className="fa fa-lg fa-heart"></span>
+                            <span className="fa fa-lg fa-heart-o"></span>
                         </div>
                     </div>
 
                     <div className="row title-price">
-                        <div className="col-6">
+                        <div className="col-12">
                             <span>{item.title}</span>
-                        </div>
-                        <div className="col-6">
-                            <span>{item.price}</span>
+                            <span className="float-right">{item.price}</span>
                         </div>
                     </div>
                 </div>
 
                 <div className="add-cart-btn">
-                    <div className="col-12 text-center my-1">
-                        <button className="btn btn-outline-info btn-lg text-center">Add to cart</button>
+                    <div className="col-12 d-flex justify-content-center">
+                        <button className="btn btn-outline-info btn-lg">Add to cart</button>
                     </div>
                 </div>
             </div>
