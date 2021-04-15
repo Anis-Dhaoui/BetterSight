@@ -1,10 +1,10 @@
-import RenderProducts from './Components/RenderProducts';
+import RenderMenProducts from './Components/MenPage';
 import './App.css';
 
 function App() {
   return (
     <div>
-      <RenderProducts />
+      <RenderMenProducts />
     </div>
   );
 }
