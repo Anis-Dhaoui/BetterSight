@@ -77,7 +77,7 @@ export default function RenderProducts() {
                 <ReactPaginate
                   previousLabel={"Prev"}
                   nextLabel={"Next"}
-                  previousClassName={pageCount ? "disableddBtn" : null}
+                  disabledClassName={"disabledBtn"}
                   breakLabel={"..."}
                   breakClassName={"break-me"}
                   pageCount={pageCount}

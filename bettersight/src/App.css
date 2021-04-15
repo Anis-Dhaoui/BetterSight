@@ -161,6 +161,6 @@
     border-radius: unset
   }
 
-  .disableddBtn{
-      background-color: red;
+  .disabledBtn{
+      color: rgb(228, 228, 228);
   }
