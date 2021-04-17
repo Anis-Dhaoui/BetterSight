@@ -10,8 +10,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  Dropdown,
-  NavbarText
+  Dropdown
 } from 'reactstrap';
 
 const Header = (props) => {

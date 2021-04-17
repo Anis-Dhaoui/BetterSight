@@ -62,10 +62,10 @@ export default function Footer() {
             <div className="col-12">
                 <div className="border-top my-3"></div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 text-md-left text-center order-12 order-md-1">
                 <p><small>&copy; 2021 All Rights Reserved.</small></p>
             </div>
-            <div className="col-md-6 text-md-right">
+            <div className="col-md-6 text-md-right text-center order-1 order-md-12">
                 <ul className="social list-unstyled">
                     <li><a href="#"><span className="fa fa-facebook fa-lg"></span></a></li>
                     <li><a href="#"><span className="fa fa-twitter fa-lg"></span></a></li>
