@@ -7,7 +7,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
@@ -27,9 +26,9 @@ const Header = (props) => {
         <NavbarBrand href="/home">
             <img src="logo.png" alt="BetterSight" width="50px" height="30px" />
         </NavbarBrand>
-        <NavbarToggler onClick={toggle} style={{background:"red", color:"black"}}/>
+        <NavbarToggler onClick={toggle}/>
         <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto" navbar className="mx-auto">
+            <Nav navbar className="mx-auto">
                 <NavItem className="itemHover">
                 <NavLink className="navItem" href="/home">Home</NavLink>
                 </NavItem>
@@ -73,7 +72,6 @@ const Header = (props) => {
                     <NavLink className="navItem" href="/">Contact Us</NavLink>
                 </NavItem>
             </Nav>
-          <NavbarText>Simple Text</NavbarText>
         </Collapse>
       </Navbar>
   );
