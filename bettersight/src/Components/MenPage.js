@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
-import {products} from '../sharedData/Products.js';
+import {products} from '../sharedData/db.json';
 import RenderProducts from '../Components/RenderProducts';
 
 export default function RenderMenProducts() {
@@ -24,7 +24,7 @@ export default function RenderMenProducts() {
     };
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid">{console.log(products)}
             <div className="row">
                 {data}
             </div>

@@ -76,9 +76,9 @@
     font-weight: bolder;
     font-family: 'Courier New', Courier, monospace;
 }
-.title-price div span:nth-child(2)::before{
+/* .title-price div span:nth-child(2)::before{
     content: "$";
-}
+} */
 /* Add to cart button */
 .add-cart-btn{
     width: auto;

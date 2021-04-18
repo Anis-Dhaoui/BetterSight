@@ -7,19 +7,19 @@ export default function RenderProducts(props) {
                 <div className="content">
                     <div id={'product-'+item.id} className="carousel slide carousel-fade">
                         <ol className="carousel-indicators">
-                            <li style={{backgroundColor:"red"}} data-target={'#product-'+item.id} data-slide-to="0" className="active"></li>
-                            <li style={{backgroundColor:"blue"}} data-target={'#product-'+item.id} data-slide-to="1"></li>
-                            <li style={{backgroundColor:"green"}} data-target={'#product-'+item.id} data-slide-to="2"></li>
+                            <li style={{backgroundColor:item.color_1}} data-target={'#product-'+item.id} data-slide-to="0" className="active"></li>
+                            <li style={{backgroundColor:item.color_2}} data-target={'#product-'+item.id} data-slide-to="1"></li>
+                            <li style={{backgroundColor:item.color_3}} data-target={'#product-'+item.id} data-slide-to="2"></li>
                         </ol>
                         <div className="carousel-inner">
                             <div className="carousel-item active">
-                                <img src={item.defaultImage} alt={item.title}/>
+                                <img src={item.image_1} alt={item.title}/>
                             </div>
                             <div className="carousel-item">
-                                <img src={item.secondImage} alt={item.title}/>
+                                <img src={item.image_2} alt={item.title}/>
                             </div>
                             <div className="carousel-item">
-                                <img src={item.thirdImage} alt={item.title}/>
+                                <img src={item.image_3} alt={item.title}/>
                             </div>
                         </div>
                     </div> 
@@ -34,7 +34,7 @@ export default function RenderProducts(props) {
 
                     <div className="row title-price">
                         <div className="col-12">
-                            <span>{item.title}</span>
+                            <span>{item.product_name}</span>
                             <span className="float-right">{item.price}</span>
                         </div>
                     </div>
