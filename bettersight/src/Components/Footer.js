@@ -16,18 +16,18 @@ export default function Footer() {
             <div className="col-md mb-4 mb-md-0">
                 <h3>Store</h3>
                 <ul className="list-unstyled nav-links">
-                    <li><a href="#">Men</a>
+                    <li><a href="/">Men</a>
                         <ul>
-                            <li><a href="#">Shop all glasses</a></li>
-                            <li><a href="#">Sunglasses</a></li>
-                            <li><a href="#">Eyeglasses</a></li>
+                            <li><a href="/">Shop all glasses</a></li>
+                            <li><a href="/">Sunglasses</a></li>
+                            <li><a href="/">Eyeglasses</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Women</a>
+                    <li><a href="/">Women</a>
                         <ul>
-                            <li><a href="#">Shop all glasses</a></li>
-                            <li><a href="#">Sunglasses</a></li>
-                            <li><a href="#">Eyeglasses</a></li>
+                            <li><a href="/">Shop all glasses</a></li>
+                            <li><a href="/">Sunglasses</a></li>
+                            <li><a href="/">Eyeglasses</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -35,21 +35,21 @@ export default function Footer() {
             <div className="col-md mb-4 mb-md-0">
                 <h3>About</h3>
                 <ul className="list-unstyled nav-links">
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Clients</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Best sellers</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="/">About us</a></li>
+                    <li><a href="/">Clients</a></li>
+                    <li><a href="/">Services</a></li>
+                    <li><a href="/">Best sellers</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/">Contact</a></li>
                 </ul>
             </div>
             <div className="col-md mb-4 mb-md-0">
                 <h3>Legal</h3>
                 <ul className="list-unstyled nav-links">
-                    <li><a href="#">Terms &amp; Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Legality</a></li>
-                    <li><a href="#">Author License</a></li>
+                    <li><a href="/">Terms &amp; Conditions</a></li>
+                    <li><a href="/">Privacy Policy</a></li>
+                    <li><a href="/">Legality</a></li>
+                    <li><a href="/">Author License</a></li>
                 </ul>
             </div>
             <div className="col-md-4 mb-4 mb-md-0">
@@ -67,11 +67,11 @@ export default function Footer() {
             </div>
             <div className="col-md-6 text-md-right text-center order-1 order-md-12">
                 <ul className="social list-unstyled">
-                    <li><a href="#"><span className="fa fa-facebook fa-lg"></span></a></li>
-                    <li><a href="#"><span className="fa fa-twitter fa-lg"></span></a></li>
-                    <li><a href="#"><span className="fa fa-pinterest fa-lg"></span></a></li>
-                    <li><a href="#"><span className="fa fa-instagram fa-lg"></span></a></li>
-                    <li><a href="#"><span className="fa fa-youtube fa-lg"></span></a></li>
+                    <li><a href="/"><span className="fa fa-facebook fa-lg"></span></a></li>
+                    <li><a href="/"><span className="fa fa-twitter fa-lg"></span></a></li>
+                    <li><a href="/"><span className="fa fa-pinterest fa-lg"></span></a></li>
+                    <li><a href="/"><span className="fa fa-instagram fa-lg"></span></a></li>
+                    <li><a href="/"><span className="fa fa-youtube fa-lg"></span></a></li>
                 </ul>
             </div>
         </div>

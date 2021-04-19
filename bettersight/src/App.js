@@ -1,15 +1,13 @@
-import RenderMenProducts from './Components/MenPage';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
+import Main from './Components/Main';
 
 function App() {
   return (
-    <div>
-      <Header />
-      <RenderMenProducts />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Main />
+    </BrowserRouter>
+    
   );
 }
 

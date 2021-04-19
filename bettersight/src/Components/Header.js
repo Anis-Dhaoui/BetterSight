@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -29,7 +30,7 @@ const Header = (props) => {
         <Collapse isOpen={isOpen} navbar>
             <Nav navbar className="mx-auto">
                 <NavItem className="itemHover">
-                <NavLink className="navItem" href="/home">Home</NavLink>
+                <Link to="/home" className="nav-link navItem">Home</Link>
                 </NavItem>
                 <Dropdown className="itemHover" {...props}
                         onMouseOver={() => setIsMenOpen(true)}
