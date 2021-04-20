@@ -24,7 +24,7 @@ const Header = (props) => {
   return (
     <Navbar color="light" light expand="md">
         <NavbarBrand href="/home">
-            <img src="logo.png" alt="BetterSight" width="50px" height="30px" />
+            <img src="../logo.png" alt="BetterSight" width="50px" height="30px" />
         </NavbarBrand>
         <NavbarToggler onClick={toggle}/>
         <Collapse isOpen={isOpen} navbar>
@@ -36,16 +36,16 @@ const Header = (props) => {
                         onMouseOver={() => setIsMenOpen(true)}
                         onFocus={() => setIsMenOpen(true)}
                         onMouseLeave={() => setIsMenOpen(false)}
-                        onBlur={() => setIsMenOpen(false)}
+                        onBlur={() => setIsMenOpen(true)}
                         toggle={() => setIsMenOpen(!isMenOpen)}
                         isOpen={isMenOpen}>
                     <DropdownToggle className="navItem dropdownItem">
-                        Men
+                      <Link to="/men" className="navItem"> Men </Link>
                     </DropdownToggle>
                     <DropdownMenu className="dropdownMenu">
-                        <DropdownItem>Shop All Glasses</DropdownItem>
-                        <DropdownItem>Sunglasses</DropdownItem>
-                        <DropdownItem>Eyeglasses</DropdownItem>
+                        <Link to="/men" className="dropdown-item">Shop All Glasses</Link>
+                        <Link to="/men/sunglasses" className="dropdown-item">Sunglasses</Link>
+                        <Link to="/men/eyeglasses" className="dropdown-item">Eyeglasses</Link>
                     </DropdownMenu>
                 </Dropdown>
                 <Dropdown className="itemHover" {...props}
