@@ -10,7 +10,6 @@ import {
   NavLink,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem,
   Dropdown
 } from 'reactstrap';
 
@@ -56,12 +55,12 @@ const Header = (props) => {
                         toggle={() => setIsWomenOpen(!isWomenOpen)}
                         isOpen={isWomenOpen}>
                     <DropdownToggle className="navItem dropdownItem">
-                        Women
+                        <Link to="/women" className="navItem"> Women </Link>
                     </DropdownToggle>
                     <DropdownMenu className="dropdownMenu">
-                        <DropdownItem>Shop All Glasses</DropdownItem>
-                        <DropdownItem>Sunglasses</DropdownItem>
-                        <DropdownItem>Eyeglasses</DropdownItem>
+                        <Link to="/women" className="dropdown-item">Shop All Glasses</Link>
+                        <Link to="/women/sunglasses" className="dropdown-item">Sunglasses</Link>
+                        <Link to="/women/eyeglasses" className="dropdown-item">Eyeglasses</Link>
                     </DropdownMenu>
                 </Dropdown>
 
