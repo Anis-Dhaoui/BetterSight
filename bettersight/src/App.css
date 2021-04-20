@@ -140,29 +140,26 @@
       font-weight: bold;
       font-size: medium;
       padding: 24px 20px;
-      margin: 0 5px;
       background-color: transparent;
       border-radius: 0%;
       border: 0;
+      width: 115px;
+      text-align: center;
   }
-  .navbar-light .navbar-nav .nav-link {
+  .navbar-light .navbar-nav .nav-link, .dropdownToggleLink {
     color: black;
    } 
    .bg-light{
        background-color: #f7f7f7!important;
    }
-   .navbar-light .navbar-nav .nav-link:hover {
+   .navbar-light .navbar-nav .nav-link:hover, .dropdownItem:hover .dropdownToggleLink {
     color: rgb(160, 156, 156);
    } 
- .dropdownItem:hover{
-      background-color: transparent;
-      color: rgb(160, 156, 156);
-  }
-  .itemHover:hover{
+   .dropdownItem:hover, .itemHover:hover{
       background-color: #fafafa;
       border-right: 1px solid #d8d1ca;
       border-left: 1px solid #d8d1ca;
-      }
+    }
     .itemHover::before {
         transition: all ease-in-out .4s;
         background: blue;

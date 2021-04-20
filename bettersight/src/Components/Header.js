@@ -39,7 +39,7 @@ const Header = (props) => {
                         toggle={() => setIsMenOpen(!isMenOpen)}
                         isOpen={isMenOpen}>
                     <DropdownToggle className="navItem dropdownItem">
-                      <Link to="/men" className="navItem"> Men </Link>
+                      <Link to="/men" className="dropdownToggleLink"> Men </Link>
                     </DropdownToggle>
                     <DropdownMenu className="dropdownMenu">
                         <Link to="/men" className="dropdown-item">Shop All Glasses</Link>
@@ -55,7 +55,7 @@ const Header = (props) => {
                         toggle={() => setIsWomenOpen(!isWomenOpen)}
                         isOpen={isWomenOpen}>
                     <DropdownToggle className="navItem dropdownItem">
-                        <Link to="/women" className="navItem"> Women </Link>
+                        <Link to="/women" className="dropdownToggleLink"> Women </Link>
                     </DropdownToggle>
                     <DropdownMenu className="dropdownMenu">
                         <Link to="/women" className="dropdown-item">Shop All Glasses</Link>
