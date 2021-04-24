@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Collapse,
@@ -7,7 +7,6 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   DropdownToggle,
   DropdownMenu,
   Dropdown
@@ -20,14 +19,21 @@ const Header = (props) => {
   const [isMenOpen, setIsMenOpen] = useState(false);
   const [isWomenOpen, setIsWomenOpen] = useState(false);
 
+  const [stick, setStick] = useState(false)
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setStick(window.scrollY > 350)
+    })
+  }, [stick])
+
   return (
-    <Navbar color="light" light expand="md">
+    <Navbar id="navArea" light expand="md" className={stick ? "is-sticky" : null}>
         <NavbarBrand href="/home">
             <img src="../logo.png" alt="BetterSight" width="50px" height="30px" />
         </NavbarBrand>
         <NavbarToggler onClick={toggle}/>
         <Collapse isOpen={isOpen} navbar>
-            <Nav navbar className="mx-auto">
+            <Nav navbar className="mx-md-auto">
                 <NavItem className="itemHover">
                 <Link to="/home" className="nav-link navItem">Home</Link>
                 </NavItem>
@@ -51,7 +57,7 @@ const Header = (props) => {
                         onMouseOver={() => setIsWomenOpen(true)}
                         onFocus={() => setIsWomenOpen(true)}
                         onMouseLeave={() => setIsWomenOpen(false)}
-                        onBlur={() => setIsWomenOpen(false)}
+                        onBlur={() => setIsWomenOpen(true)}
                         toggle={() => setIsWomenOpen(!isWomenOpen)}
                         isOpen={isWomenOpen}>
                     <DropdownToggle className="navItem dropdownItem">
@@ -65,10 +71,10 @@ const Header = (props) => {
                 </Dropdown>
 
                 <NavItem className="itemHover">
-                    <NavLink className="navItem" href="/">About Us</NavLink>
+                    <Link to="/about" className="nav-link navItem">About Us</Link>
                 </NavItem>
                 <NavItem className="itemHover">
-                    <NavLink className="navItem" href="/">Contact Us</NavLink>
+                    <Link to="/contact" className="nav-link navItem">Contact Us</Link>
                 </NavItem>
             </Nav>
         </Collapse>
