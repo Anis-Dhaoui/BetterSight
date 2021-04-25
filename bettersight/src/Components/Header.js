@@ -19,12 +19,13 @@ const Header = (props) => {
   const [isMenOpen, setIsMenOpen] = useState(false);
   const [isWomenOpen, setIsWomenOpen] = useState(false);
 
-  const [stick, setStick] = useState(false)
+  const [stick, setStick] = useState(false);
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      setStick(window.scrollY > 350)
+      setStick(window.scrollY >= 350);
     })
-  }, [stick])
+  },[stick]);
 
   return (
     <Navbar id="navArea" light expand="md" className={stick ? "is-sticky" : null}>

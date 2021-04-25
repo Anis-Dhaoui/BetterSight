@@ -1,12 +1,16 @@
+body{
+    margin: 0;
+    padding: 0;
+}
 /* CAROUSEL THAT SHOWS PRODUCTS IMAGES */
-.carousel, .carousel img{
+.product-imgs-content .carousel, .product-imgs-content .carousel img{
     width: 420px;
     height: 250px;
     z-index: 10;
     max-width: 100%;
 }
 /* Syling carousel indicators */
-.carousel .carousel-indicators{
+.product-imgs-content .carousel .carousel-indicators{
     position: absolute;
     width: 135px;
     margin: auto 0 auto 0;
@@ -14,19 +18,19 @@
     top: auto;
     bottom: -10px;
 }
-.carousel .carousel-indicators li{
+.product-imgs-content .carousel .carousel-indicators li{
     height: 30px;
     width: 30px;
     border-radius: 100%;
     transition: all 0.4s;
 }
-.carousel .carousel-indicators .active{
+.product-imgs-content .carousel .carousel-indicators .active{
     border: 3px solid rgb(189, 172, 164);
     transition: all 0.3s;
 }
 
 /* This class is the container of Carousel */
-.content {
+.product-imgs-content {
     width: 422px;
     height: auto;
     padding: 0px;
@@ -36,7 +40,7 @@
     cursor: pointer;
     max-width: 100%;
 }
-.content:hover{
+.product-imgs-content:hover{
     border: 1px solid rgb(94, 91, 91);
     border-bottom: none;
 }
@@ -313,9 +317,28 @@ a, a:hover {
     z-index: 0;
 }
 
+
+/* Styling Home Carousel */
+.home-carousel .carousel-overlay{
+  position:absolute;
+  top: 0px;
+  left:0px;
+  background-color: rgba(0, 0, 0, 0.425);
+  height: 100%;
+  width: 100%;
+}
+.home-carousel .carousel .carousel-indicators li{
+    height: 8px;
+    width: 8px;
+    border-radius: 100%;
+    margin-inline-end: 10px;
+    background-color: rgb(37, 124, 255);
+}
+
+
 /* RESPONSIVE STYLING */
 @media screen and (max-width: 576px) {
-    .carousel, .carousel img{
+    .product-imgs-content .carousel, .product-imgs-content .carousel img{
         width: 530px;
         height: 250px;
     }
@@ -323,12 +346,22 @@ a, a:hover {
     .title-price .col-12{
         width: 530px;
     }
-    .content{
+    .product-imgs-content{
         width: 532px;
     }
     .add-cart-btn .btn{
         display: block;
         width: 100%;
+    }
+
+    .home-carousel .carousel img, #jumbotron_header img{
+        height: 200px;
+    }
+
+    .titleOverlay{
+        top: 150px;
+        left: 20vw;
+        transform:  translate(-17vw, -40%);    
     }
 
 }

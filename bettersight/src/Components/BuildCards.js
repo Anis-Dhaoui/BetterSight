@@ -4,7 +4,7 @@ export default function BuildProductsCards(props) {
     return (
         props.map((item) =>
             <div className="col-12 col-sm-6 col-lg-4 product-container" key={item.id}>
-                <div className="content">
+                <div className="product-imgs-content">
                     <div id={'product-'+item.id} className="carousel slide carousel-fade">
                         <ol className="carousel-indicators">
                             <li style={{backgroundColor:item.color_1}} data-target={'#product-'+item.id} data-slide-to="0" className="active"></li>

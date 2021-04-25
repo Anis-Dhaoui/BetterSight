@@ -32,7 +32,7 @@ export default function ShowProducts(props) {
     return (
         <div>
             {console.log(currentUrl.pathname)}
-            <Jumbotron fluid style={{padding:"0"}}>
+            <Jumbotron id="jumbotron_header" fluid style={{padding:"0"}}>
                 <img src={whichHeader.image} width="100%" height="100%" alt={currentUrl.pathname} className="img-responsive" />
                 <h1 className="titleOverlay">{whichHeader.header}</h1>
             </Jumbotron>
