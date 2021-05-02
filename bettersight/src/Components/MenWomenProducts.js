@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation} from 'react-router'
-import {Jumbotron } from 'reactstrap'
+import { useLocation } from 'react-router'
+import { Jumbotron } from 'reactstrap'
 import RenderProducts from './RenderProducts'
 
-export default function ShowProducts(props) {
+export default function ShowMenWomenProd(props) {
     const [whichHeader, setwhichHeader] = useState({image: null, header: null});
     const currentUrl = useLocation();
 
