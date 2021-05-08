@@ -8,6 +8,10 @@ body{
     height: 250px;
     z-index: 10;
     max-width: 100%;
+    transition: all 0.4s linear;
+}
+.product-imgs-content .carousel img:hover{
+    transform: scale(1.1);
 }
 /* Syling carousel indicators */
 .product-imgs-content .carousel .carousel-indicators{
@@ -91,15 +95,16 @@ body{
     margin-top: -50px;
     max-width: 100%;
 }
-.add-cart-btn .btn{
+.add-cart-btn .btn-outline-info{
     width: 350px;
-    display: none;
     border-radius: 0;
     border: 1px solid rgb(94, 91, 91);
+    transform: translate(0, -95px);
+    transition: all 0.4s linear;
 }
 /* Display "Add to cart" button when the mouse hover over product */
-.product-container:hover .add-cart-btn .col-12 .btn{
-    display: block;
+.product-container:hover .add-cart-btn .btn-outline-info{
+    transform: translate(0, 0);
 }
 
 /* PAGINATION...PAGINATION...PAGINATION...PAGINATION...PAGINATION...PAGINATION...PAGINATION...PAGIN */
@@ -349,8 +354,8 @@ a, a:hover {
     .product-imgs-content{
         width: 532px;
     }
-    .add-cart-btn .btn{
-        display: block;
+    .add-cart-btn .btn-outline-info{
+        transform: translate(0,0);
         width: 100%;
     }
 
@@ -361,7 +366,7 @@ a, a:hover {
     .titleOverlay{
         top: 150px;
         left: 20vw;
-        transform:  translate(-17vw, -40%);    
+        transform: translate(-17vw, -40%);    
     }
 
 }
