@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function CartList() {
+export default function CartList(props) {
+
+    const inCartList = props.addedToCart.filter((item) => item.incart === true);
     return (
         <div>
-            <h2>Cart List</h2>
+            {console.log("CartList:",inCartList)}
         </div>
     )
 }

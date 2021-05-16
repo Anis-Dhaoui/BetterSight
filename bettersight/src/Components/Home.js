@@ -67,7 +67,7 @@ export default function Home(props) {
             </div> 
             <div className="row">
                 <div className="col-12">
-                    {RenderProducts(props.products, props.perPage)}
+                    {RenderProducts(props.products, props.perPage, props.addToCart)}
                 </div>
             </div>
         </div>

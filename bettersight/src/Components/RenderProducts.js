@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
 import BuildProductsCards from './BuildCards';
 
-export default function RenderProducts(products, perPage) {
+export default function RenderProducts(products, perPage, addToCart) {
 
     const [offSet, setOffSet] = useState(0);
     const [data, setData] = useState([]);
     
     const pageCount = Math.ceil(products.length / perPage);
     const chunkedData = products.slice(offSet, offSet + perPage);
-    const recievedData = BuildProductsCards(chunkedData);
+    const recievedData = BuildProductsCards(chunkedData, addToCart);
 
     useEffect(() => {
         setData(recievedData);

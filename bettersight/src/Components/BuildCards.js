@@ -1,7 +1,12 @@
 import React from 'react'
 
-export default function BuildProductsCards(props) {
-    return (
+export default function BuildProductsCards(props, addToCart) {
+
+    const handleAddToCart = (target) =>{
+       console.log("Added To Cart");
+       addToCart(target);
+    }
+    return(
         props.map((item) =>
             <div className="col-12 col-sm-6 col-lg-4 product-container" key={item.id}>
                 <div className="product-imgs-content">
@@ -42,9 +47,10 @@ export default function BuildProductsCards(props) {
 
                 <div className="add-cart-btn">
                     <div className="col-12 d-flex justify-content-center">
-                        <button className="btn btn-outline-info btn-lg">Add to cart</button>
+                        <button onClick={() => handleAddToCart(item.id)} className="btn btn-outline-info btn-lg">Add to cart</button>
                     </div>
                 </div>
             </div>
-    ));
+        )
+    );
 }

@@ -1,9 +1,11 @@
-import { createStore } from 'redux';
-import { Reducer } from './Reducer';
+import { createStore, combineReducers } from 'redux';
+import { ProductsRed } from './Reducer';
 
 export const appStore = () => {
     const store = createStore(
-        Reducer
+        combineReducers({
+            products: ProductsRed
+        })
     );
 
     return store;
