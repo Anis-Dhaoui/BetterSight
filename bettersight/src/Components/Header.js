@@ -78,6 +78,11 @@ const Header = (props) => {
                     <Link to="/contact" className="nav-link navItem">Contact Us</Link>
                 </NavItem>
             </Nav>
+            <Nav className="mr-3">
+              <NavItem>
+                <Link to="/incart"><i className="fa fa-cart-plus fa-2x" /> </Link>
+              </NavItem>
+            </Nav>
         </Collapse>
       </Navbar>
   );
