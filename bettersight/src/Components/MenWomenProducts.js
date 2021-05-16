@@ -36,7 +36,7 @@ export default function ShowMenWomenProd(props) {
                 <img src={whichHeader.image} width="100%" height="100%" alt={currentUrl.pathname} className="img-responsive" />
                 <h1 className="titleOverlay">{whichHeader.header}</h1>
             </Jumbotron>
-            {RenderProducts(props.products, props.perPage)}
+            {RenderProducts(props.products, props.perPage, props.addToCart)}
         </div>
     )
 }
