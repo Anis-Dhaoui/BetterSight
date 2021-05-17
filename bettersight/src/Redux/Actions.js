@@ -8,12 +8,12 @@ export const addToCart = id => {
     
 };
 
-// export const removeFromCart = id => {
-//     return {
-//         type: REMOVE_FROM_CART,
-//         id,
-//     };
-// };
+export const removeFromCart = id => {
+    return {
+        type: actionType.REMOVE_FROM_CART,
+        id,
+    };
+};
 
 // export const subtractQuantity = id => {
 //     return {

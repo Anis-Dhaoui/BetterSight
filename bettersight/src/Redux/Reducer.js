@@ -19,15 +19,13 @@ export const ProductsRed = (state = initialState, action) => {
           product.id === action.id ? {...product, incart: true} : product,
         ),
       };
-//     case actionType.REMOVE_FROM_CART:
-//       return {
-//         ...state,
-//         products: state.products.map(product =>
-//           product.id === action.id
-//             ? {...product, selected: false, quantity: 1}
-//             : product,
-//         ),
-//       };
+    case actionType.REMOVE_FROM_CART:
+      return {
+        ...state,
+        products: state.products.map(product =>
+          product.id === action.id ? {...product, incart: false} : product,
+        ),
+      };
 //     case actionType.ADD_QUANTITY:
 //       return {
 //         ...state,

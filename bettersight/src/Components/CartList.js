@@ -1,15 +1,19 @@
 import React from 'react'
 
-export default function CartList(props) {
+export default function CartList(props) {     console.log(props.addedToCart);
 
-    console.log(props.addedToCart);
+    const removeProduct = (target) =>{
+        console.log("product removed");
+        props.remove(target)
+    };
+
     const cartList = props.addedToCart.map((item) =>{
         return(
             <article className="product" key={item.id}>
                 <header>
                     <img src={item.image_1} alt={item.product_name} />
 
-                    <button className="btn btn-outline-danger">
+                    <button onClick={() => removeProduct(item.id)} className="btn btn-outline-danger">
                         Remove product
                     </button>
                 </header>
@@ -38,7 +42,8 @@ export default function CartList(props) {
                 </footer>
             </article>    
         )
-    })
+    });
+
     return (
         <div id="cart-list">
             <div  className="container">
