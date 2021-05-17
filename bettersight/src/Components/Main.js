@@ -29,7 +29,7 @@ function Main(props) {
                 <Route exact path="/women" component={() => <ShowMenWomenProd products={props.products.filter((item) => item.gender === "Female")} perPage={6} />} />
                 <Route path="/women/sunglasses" component={() => <ShowMenWomenProd products={props.products.filter((item) => item.gender === "Female" && item.product_type === "sunglasses")} perPage={6} addToCart={props.addToCart} />} />
                 <Route path="/women/eyeglasses" component={() => <ShowMenWomenProd products={props.products.filter((item) => item.gender === "Female" && item.product_type === "eyeglasses")} perPage={6} addToCart={props.addToCart} />} />
-                <Route path="/incart" component={() => <CartList addedToCart={props.products} />} />
+                <Route path="/incart" component={() => <CartList addedToCart={props.products.filter((item) => item.incart === true)} />} />
                 <Redirect to="/home" />
             </Switch>
             <Footer />
