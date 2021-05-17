@@ -5,7 +5,8 @@ export default function BuildProductsCards(props, addToCart) {
     const handleAddToCart = (target) =>{
        console.log("Added To Cart");
        addToCart(target);
-    }
+    };
+
     return(
         props.map((item) =>
             <div className="col-12 col-sm-6 col-lg-4 product-container" key={item.id}>
@@ -47,7 +48,11 @@ export default function BuildProductsCards(props, addToCart) {
 
                 <div className="add-cart-btn">
                     <div className="col-12 d-flex justify-content-center">
-                        <button onClick={() => handleAddToCart(item.id)} className="btn btn-outline-info btn-lg">Add to cart</button>
+                        {item.incart ? 
+                            <button className="btn btn-info added" disabled>in Cart</button> 
+                            : 
+                                <button onClick={() => handleAddToCart(item.id)} className="btn btn-outline-info btn-lg">Add to cart</button>
+                        }
                     </div>
                 </div>
             </div>

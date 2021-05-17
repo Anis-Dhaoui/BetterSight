@@ -110,6 +110,13 @@ body {
     transform: translate(0, 0);
 }
 
+.add-cart-btn .added{
+    padding: 11px 0;
+    width: 350px;
+    border-radius: 0;
+    border: 1px solid rgb(94, 91, 91);
+}
+
 /* PAGINATION...PAGINATION...PAGINATION...PAGINATION...PAGINATION...PAGINATION...PAGINATION...PAGIN */
 .pagination {
     margin: 15px auto;
