@@ -7,20 +7,20 @@ export default function CartList(props) {
         return(
             <article className="product" key={item.id}>
                 <header>
-                    <a className="remove">
-                        <img src="http://www.astudio.si/preview/blockedwp/wp-content/uploads/2012/08/1.jpg" alt="" />
-            
-                        <h3>Remove product</h3>
-                    </a>
+                    <img src={item.image_1} alt={item.product_name} />
+
+                    <button className="btn btn-outline-danger">
+                        Remove product
+                    </button>
                 </header>
         
                 <div className="content">
         
-                    <h1>Lorem ipsum</h1>
-            
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, numquam quis perspiciatis ea ad omnis provident laborum dolore in atque.
-            
-                    <div title="You have selected this product to be shipped in the color yellow." style={{top: "0"}} className="color yellow"></div>
+                    <h1>{item.product_name}</h1>
+                    <p>
+                        {item.description}
+                    </p>
+                        
                 </div>
         
                 <footer className="content">
@@ -29,11 +29,11 @@ export default function CartList(props) {
                     <span className="qt-plus">+</span>
             
                     <h2 className="full-price">
-                        29.98€
+                        fullPrice
                     </h2>
             
                     <h2 className="price">
-                        14.99€
+                        {item.price}
                     </h2>
                 </footer>
             </article>    
@@ -57,7 +57,7 @@ export default function CartList(props) {
             
                 <div className="right">
                     <h1 className="total">Total: <span>177.16</span>€</h1>
-                    <a className="btn">Checkout</a>
+                    <button className="btn btn-outline-primary">Checkout</button>
                 </div>        
             </div>
         </footer>    
