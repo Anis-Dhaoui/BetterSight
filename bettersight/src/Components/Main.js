@@ -6,7 +6,7 @@ import ShowMenWomenProd from './MenWomenProducts';
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CartList from './CartList';
-import { addToCart, removeFromCart } from '../Redux/Actions';
+import { addToCart, removeFromCart, addQuantity } from '../Redux/Actions';
 
 const mapStateToProps = (state) =>({
     products: state.products.products
@@ -14,7 +14,8 @@ const mapStateToProps = (state) =>({
 
 const mapDispatchToProps = dispatch =>({
     addToCart: (target) => {dispatch(addToCart(target))},
-    removeFromCart: (target) => {dispatch(removeFromCart(target))}
+    removeFromCart: (target) => {dispatch(removeFromCart(target))},
+    addQty: (target) => {dispatch(addQuantity(target))}
 })
 
 
@@ -30,7 +31,13 @@ function Main(props) {
                 <Route exact path="/women" component={() => <ShowMenWomenProd products={props.products.filter((item) => item.gender === "Female")} perPage={6} />} />
                 <Route path="/women/sunglasses" component={() => <ShowMenWomenProd products={props.products.filter((item) => item.gender === "Female" && item.product_type === "sunglasses")} perPage={6} addToCart={props.addToCart} />} />
                 <Route path="/women/eyeglasses" component={() => <ShowMenWomenProd products={props.products.filter((item) => item.gender === "Female" && item.product_type === "eyeglasses")} perPage={6} addToCart={props.addToCart} />} />
-                <Route path="/incart" component={() => <CartList addedToCart={props.products.filter((item) => item.incart === true)} remove={props.removeFromCart} />} />
+                <Route path="/incart" component={() => 
+                                        <CartList 
+                                            addedToCart={props.products.filter((item) => item.incart === true)}
+                                            remove={props.removeFromCart}
+                                            plusQty={props.addQty}
+                                        />}
+                />
                 <Redirect to="/home" />
             </Switch>
             <Footer />

@@ -3,8 +3,11 @@ import React from 'react'
 export default function CartList(props) {     console.log(props.addedToCart);
 
     const removeProduct = (target) =>{
-        console.log("product removed");
         props.remove(target)
+    };
+
+    const qtyPlus = (target) =>{
+        props.plusQty(target)
     };
 
     const cartList = props.addedToCart.map((item) =>{
@@ -29,11 +32,11 @@ export default function CartList(props) {     console.log(props.addedToCart);
         
                 <footer className="content">
                     <span className="qt-minus">-</span>
-                    <span className="qt">2</span>
-                    <span className="qt-plus">+</span>
+                    <span className="qt">{item.qty}</span>
+                    <span onClick={() => qtyPlus(item.id)} className="qt-plus">+</span>
             
                     <h2 className="full-price">
-                        fullPrice
+                        {item.total_price.toFixed(6).replace(/\.?0*$/,'')}
                     </h2>
             
                     <h2 className="price">

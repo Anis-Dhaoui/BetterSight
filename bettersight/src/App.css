@@ -531,13 +531,11 @@ a, a:hover {
   .qt-minus {
     line-height: 47px;
   }
-  
+    
   #site-footer {
-    margin: 30px 0 10px 0;
-  }
-  
-  #site-footer {
+    background-color: navajowhite;
     padding: 40px;
+    margin: 30px 0 2px 0;
   }
   
   #site-footer h1 {

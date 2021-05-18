@@ -16,25 +16,40 @@ export const ProductsRed = (state = initialState, action) => {
       return {
         ...state,
         products: state.products.map(product =>
-          product.id === action.id ? {...product, incart: true} : product,
-        ),
+          product.id === action.id ? 
+            {...product, 
+              incart: true,
+              total_price: parseFloat(product.price.match(/\d+(?:\.\d+)?/g))
+            }
+          : product
+        )
       };
+
     case actionType.REMOVE_FROM_CART:
       return {
         ...state,
         products: state.products.map(product =>
-          product.id === action.id ? {...product, incart: false} : product,
-        ),
+          product.id === action.id ? 
+            {...product, 
+              incart: false
+            }
+          : product
+        )
       };
-//     case actionType.ADD_QUANTITY:
-//       return {
-//         ...state,
-//         products: state.products.map(product =>
-//           product.id === action.id
-//             ? {...product, quantity: product.quantity + 1}
-//             : product,
-//         ),
-//       };
+
+    case actionType.ADD_QUANTITY:
+      return {
+        ...state,
+        products: state.products.map(product =>
+          product.id === action.id ?
+            {...product, 
+              qty: product.qty + 1,
+              total_price: product.total_price + parseFloat(product.price.match(/\d+(?:\.\d+)?/g)) 
+            }
+          : product
+        )
+      };
+
 //     case actionType.SUB_QUANTITY:
 //       return {
 //         ...state,
