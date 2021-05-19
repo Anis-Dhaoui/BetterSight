@@ -22,6 +22,7 @@ export default function CartList(props) {     console.log(props.addedToCart);
         }, 0);
     
     const tax = subTotal * 0.06 ; //6%
+    const total = subTotal + tax;
 
     const cartList = props.addedToCart.map((item) =>{
         return(
@@ -84,7 +85,7 @@ export default function CartList(props) {     console.log(props.addedToCart);
                 </div>
             
                 <div className="right">
-                    <h1 className="total">Total: <span>177.16</span>€</h1>
+                    <h1 className="total">Total: <span>&#36;{Math.floor(total.toFixed(6).replace(/\.?0*$/,''))}</span></h1>
                     <button className="btn btn-outline-primary">Checkout</button>
                     <button onClick={() => props.reset()} className="btn btn-outline-danger mt-2">Reset Cart</button>
                 </div>        
