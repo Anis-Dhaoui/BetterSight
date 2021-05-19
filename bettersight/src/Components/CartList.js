@@ -14,6 +14,12 @@ export default function CartList(props) {     console.log(props.addedToCart);
         props.minusQty(target)
     };
 
+    const subTotal = props.addedToCart.map(item => item.total_price)
+                        .reduce((preVal, currentVal) =>
+                        {
+                           return preVal + currentVal;
+                        }, 0)
+
     const cartList = props.addedToCart.map((item) =>{
         return(
             <article className="product" key={item.id}>
@@ -69,7 +75,7 @@ export default function CartList(props) {     console.log(props.addedToCart);
         <footer id="site-footer">
             <div className="container clearfix">
                 <div className="left">
-                    <h2 className="subtotal">Subtotal: <span>163.96</span>€</h2>
+                    <h2 className="subtotal">Subtotal: <span>&#36;{subTotal.toFixed(6).replace(/\.?0*$/,'')}</span></h2>
                     <h3 className="tax">Taxes (5%): <span>8.2</span>€</h3>
                     <h3 className="shipping">Shipping: <span>5.00</span>€</h3>
                 </div>
