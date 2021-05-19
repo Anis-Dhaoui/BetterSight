@@ -10,6 +10,10 @@ export default function CartList(props) {     console.log(props.addedToCart);
         props.plusQty(target)
     };
 
+    const qtyMinus = (target) =>{
+        props.minusQty(target)
+    };
+
     const cartList = props.addedToCart.map((item) =>{
         return(
             <article className="product" key={item.id}>
@@ -30,13 +34,20 @@ export default function CartList(props) {     console.log(props.addedToCart);
                         
                 </div>
         
-                <footer className="content">
-                    <span className="qt-minus">-</span>
+                <footer className="content qty">
+                    <span 
+                        onClick={() => qtyMinus(item.id)} 
+                        className={item.qty > 1 ? "qt-minus" : "qt-minus disabled-aria"}
+                    >
+                        -
+                    </span>
+
                     <span className="qt">{item.qty}</span>
+
                     <span onClick={() => qtyPlus(item.id)} className="qt-plus">+</span>
             
                     <h2 className="full-price">
-                        {item.total_price.toFixed(6).replace(/\.?0*$/,'')}
+                       &#36;{item.total_price.toFixed(6).replace(/\.?0*$/,'')}
                     </h2>
             
                     <h2 className="price">

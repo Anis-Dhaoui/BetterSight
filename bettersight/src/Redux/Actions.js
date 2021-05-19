@@ -22,12 +22,12 @@ export const addQuantity = id => {
     };
 };
 
-// export const subtractQuantity = id => {
-//     return {
-//         type: SUB_QUANTITY,
-//         id,
-//     };
-// };
+export const subtractQuantity = id => {
+    return {
+        type: actionType.SUB_QUANTITY,
+        id,
+    };
+};
 
 // export const emptyCart = () => {
 //     return {

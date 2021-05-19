@@ -6,7 +6,7 @@ import ShowMenWomenProd from './MenWomenProducts';
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CartList from './CartList';
-import { addToCart, removeFromCart, addQuantity } from '../Redux/Actions';
+import { addToCart, removeFromCart, addQuantity, subtractQuantity } from '../Redux/Actions';
 
 const mapStateToProps = (state) =>({
     products: state.products.products
@@ -15,8 +15,9 @@ const mapStateToProps = (state) =>({
 const mapDispatchToProps = dispatch =>({
     addToCart: (target) => {dispatch(addToCart(target))},
     removeFromCart: (target) => {dispatch(removeFromCart(target))},
-    addQty: (target) => {dispatch(addQuantity(target))}
-})
+    addQty: (target) => {dispatch(addQuantity(target))},
+    subQty: (target) => {dispatch(subtractQuantity(target))}
+});
 
 
 function Main(props) {    
@@ -36,6 +37,7 @@ function Main(props) {
                                             addedToCart={props.products.filter((item) => item.incart === true)}
                                             remove={props.removeFromCart}
                                             plusQty={props.addQty}
+                                            minusQty={props.subQty}
                                         />}
                 />
                 <Redirect to="/home" />

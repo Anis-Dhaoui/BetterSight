@@ -413,20 +413,12 @@ a, a:hover {
   }
   
   .product:hover button {
-    bottom: 145px;
+    transform: translate(0, -192px);
   }
   
   .product header button {
-    position: absolute;
-    bottom: -50px;
-    right: 0;
-    left: 0;
-  
-    -webkit-transition: bottom .2s linear;
-    -moz-transition: bottom .2s linear;
-    -ms-transition: bottom .2s linear;
-    -o-transition: bottom .2s linear;
-    transition: bottom .2s linear;
+    transform: translate(0, 0);
+    transition: all 0.4s linear;
   }
 
   #cart-list .btn {
@@ -530,6 +522,10 @@ a, a:hover {
   
   .qt-minus {
     line-height: 47px;
+  }
+
+  .disabled-aria{
+    pointer-events: none;
   }
     
   #site-footer {
