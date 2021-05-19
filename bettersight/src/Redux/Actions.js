@@ -29,8 +29,8 @@ export const subtractQuantity = id => {
     };
 };
 
-// export const emptyCart = () => {
-//     return {
-//         type: EMPTY_CART,
-//     };
-// };
+export const emptyCart = () => {
+    return {
+        type: actionType.EMPTY_CART,
+    };
+};

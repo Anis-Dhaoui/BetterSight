@@ -67,15 +67,25 @@ export const ProductsRed = (state = initialState, action) => {
 
       };
       
-//     case actionType.EMPTY_CART:
-//       return {
-//         ...state,
-//         products: state.products.map(product =>
-//           product.selected
-//             ? {...product, selected: false, quantity: 1}
-//             : product,
-//         ),
-//       };
+    case actionType.EMPTY_CART:
+      return {
+        // ...state,
+        // products: state.products.map(product =>
+        //   product.selected
+        //     ? {...product, selected: false, quantity: 1}
+        //     : product,
+        // ),
+        ...state,
+        products: state.products.map(product =>
+          product.incart ? 
+            {...product, 
+              incart: false,
+              qty: 1
+            }
+          : product
+        )
+      };
+
     default:
       return state;
   }

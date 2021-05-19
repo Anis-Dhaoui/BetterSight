@@ -77,6 +77,7 @@ export default function CartList(props) {     console.log(props.addedToCart);
                 <div className="right">
                     <h1 className="total">Total: <span>177.16</span>€</h1>
                     <button className="btn btn-outline-primary">Checkout</button>
+                    <button onClick={() => props.reset()} className="btn btn-outline-danger mt-2">Reset Cart</button>
                 </div>        
             </div>
         </footer>    
