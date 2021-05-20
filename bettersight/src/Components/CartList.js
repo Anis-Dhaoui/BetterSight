@@ -22,7 +22,8 @@ export default function CartList(props) {     console.log(props.addedToCart);
         }, 0);
     
     const tax = subTotal * 0.06 ; //6%
-    const total = subTotal + tax;
+    const shipment = subTotal === 0 ? 0 : 10;
+    const total = subTotal + tax + shipment;
 
     const cartList = props.addedToCart.map((item) =>{
         return(
@@ -79,13 +80,13 @@ export default function CartList(props) {     console.log(props.addedToCart);
         <footer id="site-footer">
             <div className="container clearfix">
                 <div className="left">
-                    <h2 className="subtotal">Subtotal: <span>&#36;{subTotal.toFixed(6).replace(/\.?0*$/,'')}</span></h2>
+                    <h2 className="subtotal">Subtotal: <span>&#36;{subTotal.toFixed(2).replace(/\.?0*$/,'')}</span></h2>
                     <h3 className="tax">Taxes (6%): <span>&#36;{tax.toFixed(2).replace(/\.?0*$/,'')}</span></h3>
                     <h3 className="shipping">Shipping: <span>&#36;10.00</span></h3>
                 </div>
             
                 <div className="right">
-                    <h1 className="total">Total: <span>&#36;{Math.floor(total.toFixed(6).replace(/\.?0*$/,''))}</span></h1>
+                    <h1 className="total">Total: <span>&#36;{total.toFixed(2).replace(/\.?0*$/,'')}</span></h1>
                     <button className="btn btn-outline-primary">Checkout</button>
                     <button onClick={() => props.reset()} className="btn btn-outline-danger mt-2">Reset Cart</button>
                 </div>        

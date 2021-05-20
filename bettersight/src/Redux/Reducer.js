@@ -1,15 +1,10 @@
 import * as actionType from './ActionTypes';
 import { products } from '../sharedData/db.json';
 
-// export const initialState = [...products];
-
-// export const ProductsRed = (state = initialState, action) => {
-//             return state;
-// };
-
 const initialState = {
   products: products,
 };
+
 export const ProductsRed = (state = initialState, action) => {
   switch (action.type) {
     case actionType.ADD_TO_CART:
@@ -69,12 +64,6 @@ export const ProductsRed = (state = initialState, action) => {
       
     case actionType.EMPTY_CART:
       return {
-        // ...state,
-        // products: state.products.map(product =>
-        //   product.selected
-        //     ? {...product, selected: false, quantity: 1}
-        //     : product,
-        // ),
         ...state,
         products: state.products.map(product =>
           product.incart ? 
