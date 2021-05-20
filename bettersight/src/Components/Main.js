@@ -7,6 +7,7 @@ import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CartList from './CartList';
 import { addToCart, removeFromCart, addQuantity, subtractQuantity, emptyCart } from '../Redux/Actions';
+import ProductDetail from './ProductDetail';
 
 const mapStateToProps = (state) =>({
     products: state.products.products
@@ -21,7 +22,16 @@ const mapDispatchToProps = dispatch =>({
 });
 
 
-function Main(props) {    
+function Main(props) {
+
+    const productInfo = ({match}) =>{
+        return(
+            <ProductDetail product={
+                    props.products.filter((item) => item.id === parseInt(match.params.prodId, 10))[0]
+                } 
+            />
+        )
+    }   
     return (
         <>{console.log(props.products)}
             <Header />
@@ -42,6 +52,7 @@ function Main(props) {
                                             reset={props.resetCart}
                                         />}
                 />
+                <Route path="/detail/:prodId" component={productInfo} />
                 <Redirect to="/home" />
             </Switch>
             <Footer />

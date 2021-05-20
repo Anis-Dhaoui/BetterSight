@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function ProductDetail() {
+export default function ProductDetail(props) {
     return (
         <div>
-            <h2>Product Detail</h2>
+            <h2>Detail of product with id {props.product.id}</h2>
         </div>
     )
 }
