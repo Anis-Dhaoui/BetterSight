@@ -53,7 +53,7 @@ export default function BuildProductsCards(props, addToCart) {
                                 {item.incart ? 
                                     <button className="btn btn-info added" disabled>in Cart</button> 
                                     : 
-                                        <button onClick={() => handleAddToCart(item.id)} className="btn btn-outline-info btn-lg">Add to cart</button>
+                                    <button onClick={() => handleAddToCart(item.id)} className="btn btn-outline-info btn-lg">Add to cart</button>
                                 }
                             </div>
                         </div>
