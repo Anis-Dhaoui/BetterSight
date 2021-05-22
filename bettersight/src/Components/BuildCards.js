@@ -10,8 +10,7 @@ export default function BuildProductsCards(props, addToCart) {
 
     return(
         props.map((item) =>
-                <div className="col-12 col-sm-6 col-lg-4 product-container" key={item.id}>
-                    <Link to={`detail/${item.id}`} >
+                    <div className="col-12 col-sm-6 col-lg-4 product-container" key={item.id}>
                         <div className="product-imgs-content">
                             <div id={'product-'+item.id} className="carousel slide carousel-fade">
                                 <ol className="carousel-indicators">
@@ -19,17 +18,19 @@ export default function BuildProductsCards(props, addToCart) {
                                     <li style={{backgroundColor:item.color_2}} data-target={'#product-'+item.id} data-slide-to="1"></li>
                                     <li style={{backgroundColor:item.color_3}} data-target={'#product-'+item.id} data-slide-to="2"></li>
                                 </ol>
-                                <div className="carousel-inner">
-                                    <div className="carousel-item active">
-                                        <img src={item.image_1} alt={item.title}/>
+                                <Link to={`detail/${item.id}`} >
+                                    <div className="carousel-inner">
+                                        <div className="carousel-item active">
+                                            <img src={item.image_1} alt={item.title}/>
+                                        </div>
+                                        <div className="carousel-item">
+                                            <img src={item.image_2} alt={item.title}/>
+                                        </div>
+                                        <div className="carousel-item">
+                                            <img src={item.image_3} alt={item.title}/>
+                                        </div>
                                     </div>
-                                    <div className="carousel-item">
-                                        <img src={item.image_2} alt={item.title}/>
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={item.image_3} alt={item.title}/>
-                                    </div>
-                                </div>
+                                </Link>
                             </div> 
                         </div>
 
@@ -57,8 +58,7 @@ export default function BuildProductsCards(props, addToCart) {
                                 }
                             </div>
                         </div>
-                    </Link>
-                </div>
+                    </div>
         )
     );
 }
