@@ -104,6 +104,8 @@ body {
     border: 1px solid rgb(94, 91, 91);
     transform: translate(0, -95px);
     transition: all 0.4s linear;
+    text-transform: UPPERCASE;
+  
 }
 /* Display "Add to cart" button when the mouse hover over product */
 .product-container:hover .add-cart-btn .btn-outline-info{
@@ -115,6 +117,7 @@ body {
     width: 350px;
     border-radius: 0;
     border: 1px solid rgb(94, 91, 91);
+    text-transform: UPPERCASE;
 }
 
 /* PAGINATION...PAGINATION...PAGINATION...PAGINATION...PAGINATION...PAGINATION...PAGINATION...PAGIN */
@@ -155,7 +158,7 @@ body {
   /* HEADER HEADER HEADER HEADER HEADER HEADER */
   /* Navbar Items */
   .navItem{
-      color: black;
+      color: white;
       font-weight: bold;
       font-size: medium;
       padding: 24px 20px;
@@ -167,7 +170,7 @@ body {
       transition: all 1s ease;
   }
   .navbar-light .navbar-nav .nav-link, .dropdownToggleLink {
-    color: black;
+    color: white;
     transition: all 1s ease;
    } 
    .navbar-light .navbar-nav .nav-link:hover, .dropdownItem:hover .dropdownToggleLink {
@@ -206,8 +209,8 @@ body {
         height: 35px;
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M8 8 L24 24 M8 24 L24 8'/%3E%3C/svg%3E");
     } */
-    .bg-light{
-        background-color: #f7f7f7;
+    #navArea{
+        background-color: #00031a;
     }
     .navbar-collapse{
         z-index: 1;
@@ -626,7 +629,7 @@ a, a:hover {
 }
 
 .card {
-  margin-top: 50px;
+  margin: 50px 0;
   background: #eee;
   padding: 3em;
   line-height: 1.5em;
@@ -684,8 +687,11 @@ a, a:hover {
   font-weight: bold;
   color: #fff;
   -webkit-transition: background .3s ease;
-          transition: background .3s ease; }
-
+          transition: background .3s ease;
+}
+.add-to-cart{
+  width: 170px;
+}
 .add-to-cart:hover, .like:hover {
   background: #14c1f5;
   color: #fff;

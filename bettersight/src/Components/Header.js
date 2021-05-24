@@ -28,7 +28,7 @@ const Header = (props) => {
   },[stick]);
 
   return (
-    <Navbar id="navArea" light expand="md" className={stick ? "is-sticky" : null}>
+    <Navbar id="navArea" expand="md" className={stick ? "is-sticky" : null}>
         <NavbarBrand href="/home">
             <img src="../logo.png" alt="BetterSight" width="50px" height="30px" />
         </NavbarBrand>

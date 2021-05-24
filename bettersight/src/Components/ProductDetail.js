@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 export default function ProductDetail(props) {
     return (            
-        <div className="container mb-5 pb-5">
+        <div className="container">
             <div className="card">
                 <div className="container-fliud">
                     <div className="wrapper row">
@@ -41,7 +41,12 @@ export default function ProductDetail(props) {
                                 <span style={{backgroundColor:props.product.color_3}} className="color"></span>
                             </h5>
                             <div className="action">
-                                <button className="add-to-cart btn btn-default mr-3" type="button">add to cart</button>
+                                {
+                                    props.product.incart ?
+                                    <button className="add-to-cart btn, btn-default mr-3" type="button">in Cart</button>
+                                    :
+                                    <button onClick={() => props.addToCart(props.product.id)} className="add-to-cart btn btn-default mr-3" type="button">add to cart</button>
+                                }        
                                 <button className="like btn btn-default" type="button"><span className="fa fa-heart"></span></button>
                             </div>
                         </div>
