@@ -1,6 +1,23 @@
 import React from 'react'
 
-export default function Reviews() {
+export default function Reviews({reviews}) {
+
+    let i = 0;
+    const renderReviews = reviews.map((item) =>{
+        return(
+            <div 
+                className={i++ % 2 === 0 ? "comment mt-4 text-justify float-left" : 
+                            "comment mt-4 text-justify float-left bg-transparent"
+                        }
+                key={item.id} 
+            >
+                <img src={item.avatar} alt={item.first_name} className="rounded-circle" width="50" height="50" />
+                <h4>{item.first_name} {item.last_name}</h4> <span>- {item.date}</span>
+                <p> {item.comment} </p>
+            </div>
+        )
+    });
+
     return (
         <div id="review">
             <div className="row">
@@ -11,22 +28,7 @@ export default function Reviews() {
 
             <div className="row">            
                 <div className="col-sm-5 col-md-6 col-12 pb-4">
-                    <div className="comment mt-4 text-justify float-left"> <img src="https://i.imgur.com/yTFUilP.jpg" alt="" className="rounded-circle" width="50" height="50" />
-                        <h4>Jhon Doe</h4> <span>- 20 October, 2018</span> <br />
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
-                    </div>
-                    <div className="text-justify darker mt-4 float-right"> <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" className="rounded-circle" width="40" height="40" />
-                        <h4>Rob Simpson</h4> <span>- 20 October, 2018</span> <br />
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
-                    </div>
-                    <div className="comment mt-4 text-justify"> <img src="https://i.imgur.com/yTFUilP.jpg" alt="" className="rounded-circle" width="40" height="40" />
-                        <h4>Jhon Doe</h4> <span>- 20 October, 2018</span> <br />
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
-                    </div>
-                    <div className="darker mt-4 text-justify"> <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" className="rounded-circle" width="40" height="40" />
-                        <h4>Rob Simpson</h4> <span>- 20 October, 2018</span> <br />
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
-                    </div>
+                    {renderReviews}
                 </div>
 
                 <div className="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">

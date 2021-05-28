@@ -31,6 +31,7 @@ function Main(props) {
                     props.products.filter((item) => item.id === parseInt(match.params.prodId, 10))[0]
                 }
                 addToCart={props.addToCart}
+                reviews={props.reviews.filter((item) => item.product_id === parseInt(match.params.prodId, 10))}
             />
         )
     }   

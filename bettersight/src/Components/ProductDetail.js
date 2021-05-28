@@ -56,7 +56,7 @@ export default function ProductDetail(props) {
                     </div>
                 </div>
             </div>
-            <Reviews />
+            <Reviews reviews={props.reviews}/>
         </div>
     )
 }
