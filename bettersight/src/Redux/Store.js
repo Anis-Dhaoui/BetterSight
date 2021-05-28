@@ -1,10 +1,11 @@
 import { createStore, combineReducers } from 'redux';
-import { ProductsRed } from './Reducer';
+import { ProductsRed, ReviewsRed } from './Reducer';
 
 export const appStore = () => {
     const store = createStore(
         combineReducers({
-            products: ProductsRed
+            products: ProductsRed,
+            reviews: ReviewsRed
         })
     );
 

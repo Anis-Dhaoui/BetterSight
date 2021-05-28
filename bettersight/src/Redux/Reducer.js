@@ -1,10 +1,10 @@
 import * as actionType from './ActionTypes';
-import { products } from '../sharedData/db.json';
+import { products, reviews } from '../sharedData/db.json';
 
 const initialState = {
   products: products,
 };
-
+/////////////////// Product Reducer //////////////////////
 export const ProductsRed = (state = initialState, action) => {
   switch (action.type) {
     case actionType.ADD_TO_CART:
@@ -77,5 +77,19 @@ export const ProductsRed = (state = initialState, action) => {
 
     default:
       return state;
+  }
+};
+
+/////////////////// Reviews Reducer //////////////////////
+export const ReviewsRed = (state = reviews, action) => {
+  switch (action.type) {
+      case actionType.ADD_REVIEWS:
+          return state;    
+
+      // case actionType.POST_REVIEW:
+      //     return state = state.concat(action.payload);
+                  
+      default:
+          return state;
   }
 };

@@ -10,7 +10,8 @@ import { addToCart, removeFromCart, addQuantity, subtractQuantity, emptyCart } f
 import ProductDetail from './ProductDetail';
 
 const mapStateToProps = (state) =>({
-    products: state.products.products
+    products: state.products.products,
+    reviews: state.reviews
 });
 
 const mapDispatchToProps = dispatch =>({
@@ -34,7 +35,7 @@ function Main(props) {
         )
     }   
     return (
-        <>{console.log(props.products)}
+        <>{console.log(props.reviews)}
             <Header />
             <Switch>
                 <Route path="/home" component={() =><Home products={props.products} perPage={9} addToCart={props.addToCart} />} />

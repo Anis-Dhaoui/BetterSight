@@ -34,3 +34,7 @@ export const emptyCart = () => {
         type: actionType.EMPTY_CART,
     };
 };
+
+export const addReviews = () =>({
+    type: actionType.ADD_REVIEWS
+});
