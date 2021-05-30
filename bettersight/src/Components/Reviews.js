@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { LocalForm, Control, Errors } from 'react-redux-form';
-import { Row, Label } from 'reactstrap';
+import { Row, Label, Col } from 'reactstrap';
 import StarRatings from 'react-star-ratings';
 
 const required = (val) => val;
 const minMaxLength = (minLen, maxLen) => (val) => !val || (val.length >= minLen && val.length <= maxLen);
-const isNumber = (val) => !val || (val !== "" && !isNaN(val));
+// const isNumber = (val) => !val || (val !== "" && !isNaN(val));
 const validEmail = (val) => !val || /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
 export default function Reviews({reviews}) {
+
+    const [rate, setRate] = useState(0)
+
+    const handleRating = (val)=>{
+        setRate(val)
+    }
 
     let i = 0;
     const renderReviews = reviews.map((item) =>{
@@ -31,7 +37,6 @@ export default function Reviews({reviews}) {
                             starSpacing="0em"
                             rating={item.rating}
                             numberOfStars={5}
-                            name='rating'
                         />
                     </div>
                     <div className="col-12 col-md-4 col-sm-12 d-flex justify-content-md-end justify-content-center">
@@ -61,20 +66,26 @@ export default function Reviews({reviews}) {
                 <div className="col-12 col-sm-5 col-md-4 mt-4">
 
                     <LocalForm onSubmit={(value) => this.handleSubmit(value)} className="form-rev p-3">
-                        <Row className="form-group">
-                            <Label htmlFor="rating">Rating</Label>
-                            <div className="rating">
-                                {/* eslint-disable */}
-                                <Control.radio model=".rate" className="form-control" name="rating" value="5" id="5" /><label htmlFor="5">☆</label>
-                                <Control.radio model=".rate" className="form-control" name="rating" value="4" id="4" /><label htmlFor="4">☆</label>
-                                <Control.radio model=".rate" className="form-control" name="rating" value="3" id="3" /><label htmlFor="3">☆</label>
-                                <Control.radio model=".rate" className="form-control" name="rating" value="2" id="2" /><label htmlFor="2">☆</label>
-                                <Control.radio model=".rate" className="form-control" name="rating" value="1" id="1" /><label htmlFor="1">☆</label> 
-                                {/* eslint-disable */}
-
-                            </div>
+                        <Row className="d-flex justify-content-center text-light px-1" style={{backgroundColor:"#007bff"}}>
+                            <h2>Did love it! let us know</h2>
                         </Row>
-
+                        <Row className="form-group">
+                            <Col xs="12" className="label" htmlFor="rating">
+                                Rate this product:
+                            </Col>
+                            <Col xs="12">
+                                <StarRatings
+                                rating={rate}
+                                starRatedColor="gold"
+                                starHoverColor="yellow"
+                                starDimension="30px"
+                                starSpacing="0em"
+                                changeRating={handleRating}
+                                numberOfStars={5}
+                                name='rating'
+                                />
+                            </Col>
+                        </Row>
                         <Row className="form-group">
                             <Label htmlFor="name">First Name</Label>
                             {/* eslint-disable-next-line */}

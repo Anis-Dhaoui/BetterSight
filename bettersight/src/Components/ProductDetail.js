@@ -11,14 +11,16 @@ export default function ProductDetail(props) {
                             <div className="preview col-md-6">
                                 
                                 <div className="preview-pic tab-content">
-                                    <div className="tab-pane active" id="pic-1"><img src={props.product.image_1} /></div>
-                                    <div className="tab-pane" id="pic-2"><img src={props.product.image_2} /></div>
-                                    <div className="tab-pane" id="pic-3"><img src={props.product.image_3} /></div>
+                                    <div className="tab-pane active" id="pic-1"><img src={props.product.image_1} alt={props.product.product_name} /></div>
+                                    <div className="tab-pane" id="pic-2"><img src={props.product.image_2} alt={props.product.product_name} /></div>
+                                    <div className="tab-pane" id="pic-3"><img src={props.product.image_3} alt={props.product.product_name} /></div>
                                 </div>
                                 <ul className="preview-thumbnail nav nav-tabs">
-                                    <li className="active"><a data-target="#pic-1" data-toggle="tab"><img src={props.product.image_1} /></a></li>
-                                    <li><a data-target="#pic-2" data-toggle="tab"><img src={props.product.image_2} /></a></li>
-                                    <li><a data-target="#pic-3" data-toggle="tab"><img src={props.product.image_3} /></a></li>
+                                    {/* eslint-disable */}
+                                    <li className="active"><a data-target="#pic-1" data-toggle="tab"><img src={props.product.image_1} alt={props.product.product_name} /></a></li>
+                                    <li><a data-target="#pic-2" data-toggle="tab"><img src={props.product.image_2} alt={props.product.product_name} /></a></li>
+                                    <li><a data-target="#pic-3" data-toggle="tab"><img src={props.product.image_3} alt={props.product.product_name} /></a></li>
+                                    {/* eslint-disable */}
                                 </ul>
                                 
                             </div>
