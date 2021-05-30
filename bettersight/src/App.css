@@ -787,21 +787,20 @@ a, a:hover {
   padding-top: 10px
 }
 
-.comment h4,
+/* .comment h4,
 .comment span,
 .darker h4,
 .darker span {
   display: inline
-}
+} */
 
 #review p{
   font-family: Arial, Helvetica, sans-serif;
   color: black
 }
 
-#review h1, #review h4 {
-  color: black;
-  font-weight: bold
+#review h1, #review h5 {
+  display: inline;
 }
 
 #review label {
@@ -822,7 +821,7 @@ a, a:hover {
 
 #review img {
   margin: -8px 10px 0 -37px;
-  position: static
+  /* position: static */
 }
 
 #review .form-group input,
@@ -839,7 +838,51 @@ a, a:hover {
   padding: 20px
 }
 
+/* comment Form */
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin: -20px 0 -20px 0;
+}
+
+.rating>input {
+  display: none
+}
+
+.rating>label {
+  position: relative;
+  width: 19px;
+  font-size: 25px;
+  color: #FFD700;
+  cursor: pointer
+}
+
+.rating>label::before {
+  content: "\2605";
+  position: absolute;
+  opacity: 0
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+  opacity: 1 !important
+}
+
+.rating>input:checked~label:before {
+  opacity: 1
+}
+
+.rating:hover>input:checked~label:before {
+  opacity: 0.4
+}
 /* End Review */
+
+
+
+
+
+
 
 
 
