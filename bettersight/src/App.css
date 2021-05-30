@@ -787,13 +787,6 @@ a, a:hover {
   padding-top: 10px
 }
 
-/* .comment h4,
-.comment span,
-.darker h4,
-.darker span {
-  display: inline
-} */
-
 #review p{
   font-family: Arial, Helvetica, sans-serif;
   color: black
@@ -821,25 +814,30 @@ a, a:hover {
 
 #review img {
   margin: -8px 10px 0 -37px;
-  /* position: static */
+  position: static
 }
 
 #review .form-group input,
 #review .form-group textarea {
   background-color: #eee;
   border: 1px solid rgba(16, 46, 46, 1);
-  border-radius: 12px
+  border-radius: 12px;
 }
 
-#review form {
+#review .form-group{
+  padding: 5px 10px;
+}
+
+#review .form-rev {
   border: 1px solid rgba(37, 115, 216);
   background-color: rgba(37, 115, 216);
   border-radius: 5px;
-  padding: 20px
+  padding: 5px;
+  width: 100%;
 }
 
 /* comment Form */
-.rating {
+/* .rating {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
@@ -875,7 +873,7 @@ a, a:hover {
 
 .rating:hover>input:checked~label:before {
   opacity: 0.4
-}
+} */
 /* End Review */
 
 
