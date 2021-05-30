@@ -6,7 +6,7 @@ import ShowMenWomenProd from './MenWomenProducts';
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CartList from './CartList';
-import { addToCart, removeFromCart, addQuantity, subtractQuantity, emptyCart } from '../Redux/Actions';
+import { addToCart, removeFromCart, addQuantity, subtractQuantity, emptyCart, postNewReview } from '../Redux/Actions';
 import ProductDetail from './ProductDetail';
 
 const mapStateToProps = (state) =>({
@@ -19,7 +19,8 @@ const mapDispatchToProps = dispatch =>({
     removeFromCart: (target) => {dispatch(removeFromCart(target))},
     addQty: (target) => {dispatch(addQuantity(target))},
     subQty: (target) => {dispatch(subtractQuantity(target))},
-    resetCart: (target) => {dispatch(emptyCart(target))}
+    resetCart: (target) => {dispatch(emptyCart(target))},
+    postNewReview: (prodId, firstName, lastName, email, comment, date, rating) => {dispatch(postNewReview(prodId, firstName, lastName, email, comment, date, rating ))}
 });
 
 
@@ -32,6 +33,7 @@ function Main(props) {
                 }
                 addToCart={props.addToCart}
                 reviews={props.reviews.filter((item) => item.product_id === parseInt(match.params.prodId, 10))}
+                postReview={props.postNewReview}
             />
         )
     }   

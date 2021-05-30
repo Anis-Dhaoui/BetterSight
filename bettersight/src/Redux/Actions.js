@@ -38,3 +38,16 @@ export const emptyCart = () => {
 export const addReviews = () =>({
     type: actionType.ADD_REVIEWS
 });
+
+export const postNewReview = (prodId, firstName, lastName, email, comment, date, rating) => ({
+    type: actionType.POST_REVIEW,
+    payload: {
+        product_id: prodId,
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        comment: comment,
+        date:  date,
+        rating: rating
+    }
+});

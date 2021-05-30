@@ -8,25 +8,48 @@ const minMaxLength = (minLen, maxLen) => (val) => !val || (val.length >= minLen 
 // const isNumber = (val) => !val || (val !== "" && !isNaN(val));
 const validEmail = (val) => !val || /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
-export default function Reviews({reviews}) {
+export default function Reviews(props) {
 
+// Stars rating state
     const [rate, setRate] = useState(0)
-
-    const handleRating = (val)=>{
+    const handleRating = (val) =>{
         setRate(val)
     }
 
+// Get the current date in dd/mm/yyyy format to pass it as parameter to postReview action
+    let today = new Date();
+    let dd = today.getDate();
+
+    let mm = today.getMonth()+1; 
+    const yyyy = today.getFullYear();
+    if(dd<10){
+        dd=`0${dd}`;
+    } 
+
+    if(mm<10){
+        mm=`0${mm}`;
+    } 
+    today = `${dd}/${mm}/${yyyy}`;
+
+// Handle submit form button
+    const handleSubmit = (value) =>{
+        props.postNewRev(props.productId, value.firstName, value.lastName, value.email, value.comment, today, rate);
+    }
+
+// The purpose of this i var is to change the backroung color of reviews list
     let i = 0;
-    const renderReviews = reviews.map((item) =>{
+
+// Rendering the reviews list
+    const renderReviews = props.reviews.map((item) =>{
         return(
-            <div 
+            <div  style={{minWidth:"100%"}}
                 className={i++ % 2 === 0 ? "comment mt-4 text-justify float-left" : 
                             "comment mt-4 text-justify float-left bg-transparent"
                         }
                 key={item.id} 
             >
                 <div className="row mb-3">
-                    <div className="col-12 col-md-4 col-sm-12">
+                    <div className="col-12 col-md-5 col-sm-12">
                         <img src={item.avatar} alt={item.first_name} className="rounded-circle" width="50" height="50" />
                         <h5> {item.first_name} {item.last_name} </h5>
                     </div>
@@ -39,7 +62,7 @@ export default function Reviews({reviews}) {
                             numberOfStars={5}
                         />
                     </div>
-                    <div className="col-12 col-md-4 col-sm-12 d-flex justify-content-md-end justify-content-center">
+                    <div className="col-12 col-md-3 col-sm-12 d-flex justify-content-md-end justify-content-center">
                          <h6> {item.date} </h6>
                     </div>
                 </div>
@@ -65,7 +88,7 @@ export default function Reviews({reviews}) {
 
                 <div className="col-12 col-sm-5 col-md-4 mt-4">
 
-                    <LocalForm onSubmit={(value) => this.handleSubmit(value)} className="form-rev p-3">
+                    <LocalForm onSubmit={(value) => handleSubmit(value)} className="form-rev p-3">
                         <Row className="d-flex justify-content-center text-light px-1" style={{backgroundColor:"#007bff"}}>
                             <h2>Did love it! let us know</h2>
                         </Row>
@@ -131,7 +154,7 @@ export default function Reviews({reviews}) {
                             <Label htmlFor="comment">Comment</Label>
                             {/* eslint-disable-next-line */}
                             <Control.textarea model=".comment" className="form-control" name="comment" id="comment" placeholder="Type your comment" rows={5}
-                                validators={{ required, minMaxLength: minMaxLength(4, 30)}}
+                                validators={{ required, minMaxLength: minMaxLength(4, 70)}}
                             />
                             <Errors className="text-danger" model=".comment" show="touched"
                                 messages={{

@@ -86,8 +86,12 @@ export const ReviewsRed = (state = reviews, action) => {
       case actionType.ADD_REVIEWS:
           return state;    
 
-      // case actionType.POST_REVIEW:
-      //     return state = state.concat(action.payload);
+      case actionType.POST_REVIEW:
+        const tempState = action.payload;
+        const newId = state.length;
+        tempState.id = newId;
+
+          return state = state.concat(tempState);
                   
       default:
           return state;

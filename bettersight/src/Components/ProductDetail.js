@@ -58,7 +58,7 @@ export default function ProductDetail(props) {
                     </div>
                 </div>
             </div>
-            <Reviews reviews={props.reviews}/>
+            <Reviews reviews={props.reviews} productId={props.product.id} postNewRev={props.postReview}/>
         </div>
     )
 }

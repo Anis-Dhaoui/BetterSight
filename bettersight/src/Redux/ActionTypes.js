@@ -6,3 +6,4 @@ export const EMPTY_CART = 'EMPTY_CART';
 
 
 export const ADD_REVIEWS = 'ADD_REVIEWS';
+export const POST_REVIEW = 'POST_REVIEW';
