@@ -66,13 +66,13 @@ export default function RatingSystem(props) {
           totalReviews += rating.count;
         });
       
-        const averageRating = totalWeight / totalReviews;
+        const averageRating = totalReviews > 0 ? totalWeight / totalReviews : 0;
       
         return averageRating;
     }
 
     const weightedAvr = calcAverageRating(ratings);
-    console.log(weightedAvr);
+    console.log("weightedAvr", weightedAvr);
 
     return (
         <div className="rating mt-n3">
