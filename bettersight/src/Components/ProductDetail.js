@@ -1,7 +1,9 @@
 import React from 'react';
+import RatingSystem from './RatingSystem';
 import Reviews from './Reviews';
 
 export default function ProductDetail(props) {
+
     return (            
         <div className="container">
             <div className="row">
@@ -26,16 +28,7 @@ export default function ProductDetail(props) {
                             </div>
                             <div className="details col-md-6">
                                 <h3 className="product-title">{props.product.product_name}</h3>
-                                <div className="rating">
-                                    <div className="stars">
-                                        <span className="fa fa-star checked"></span>
-                                        <span className="fa fa-star checked"></span>
-                                        <span className="fa fa-star checked"></span>
-                                        <span className="fa fa-star"></span>
-                                        <span className="fa fa-star"></span>
-                                    </div>
-                                    <span className="review-no">41 reviews</span>
-                                </div>
+                                <RatingSystem reviews={props.reviews} />
                                 <p className="product-description">{props.product.description}</p>
                                 <h4 className="price">current price: <span>{props.product.price}</span></h4>
 

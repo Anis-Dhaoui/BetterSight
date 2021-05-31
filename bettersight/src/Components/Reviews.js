@@ -38,7 +38,7 @@ export default function Reviews(props) {
 
 // The purpose of this i var is to change the backroung color of reviews list
     let i = 0;
-
+    
 // Rendering the reviews list
     const renderReviews = props.reviews.map((item) =>{
         return(
@@ -90,7 +90,7 @@ export default function Reviews(props) {
 
                     <LocalForm onSubmit={(value) => handleSubmit(value)} className="form-rev p-3">
                         <Row className="d-flex justify-content-center text-light px-1" style={{backgroundColor:"#007bff"}}>
-                            <h2>Did love it! let us know</h2>
+                            <h2>Did you love it! <br/> Let us know</h2>
                         </Row>
                         <Row className="form-group">
                             <Col xs="12" className="label" htmlFor="rating">
