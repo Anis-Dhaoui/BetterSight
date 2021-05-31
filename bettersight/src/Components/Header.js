@@ -13,6 +13,7 @@ import {
 } from 'reactstrap';
 
 const Header = (props) => {
+
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -30,9 +31,16 @@ const Header = (props) => {
   return (
     <Navbar id="navArea" expand="md" className={stick ? "is-sticky" : null}>
         <NavbarBrand href="/home">
-            <img src="../logo.png" alt="BetterSight" width="50px" height="30px" />
+          <img src="../logo.png" alt="BetterSight" width="50px" height="30px" />
         </NavbarBrand>
-        <NavbarToggler onClick={toggle} style={{backgroudColor:"white"}} />
+
+        <div className="d-md-none">
+          <Link to="/incart"><i className="fa fa-cart-plus fa-2x notification mt-n2" style={{margin:"20px 150px -50px 0"}} />
+            <span className="badge mt-n2" style={{margin:"20px 150px -50px 0"}}>{props.cart.length}</span>
+          </Link>
+        </div>
+
+        <NavbarToggler onClick={toggle}/>
         <Collapse isOpen={isOpen} navbar>
             <Nav navbar className="mx-md-auto">
                 <NavItem className="itemHover">
@@ -80,8 +88,8 @@ const Header = (props) => {
             </Nav>
             <Nav className="mr-3">
               <NavItem className="d-none d-md-block">
-                <Link to="/incart"><i className="fa fa-cart-plus fa-2x notification mt-n2" />
-                  <span className="badge mt-n2">{props.addedToCart.length}</span>
+                <Link id="cart-icon" to="/incart"><i className="fa fa-cart-plus fa-2x notification mt-n2" />
+                  <span className="badge mt-n2">{props.cart.length}</span>
                 </Link>
               </NavItem>
             </Nav>

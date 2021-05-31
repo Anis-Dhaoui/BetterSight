@@ -29,7 +29,8 @@ export default function RatingSystem(props) {
           count: 0
         }
       ];
-      
+
+      /* eslint-disable */
     props.reviews.map((item) => {
         switch (item.rating){
             case 5:
@@ -52,23 +53,25 @@ export default function RatingSystem(props) {
                 break;
         }
     });
+    /* eslint-disable */
+
     console.log(ratings);
 
     const calcAverageRating = (ratings) => {
 
-        let totalWeight = 0;
-        let totalReviews = 0;
-      
-        ratings.forEach((rating) => {
-      
-          const weightMultipliedByNumber = rating.weight * rating.count;
-          totalWeight += weightMultipliedByNumber;
-          totalReviews += rating.count;
-        });
-      
-        const averageRating = totalReviews > 0 ? totalWeight / totalReviews : 0;
-      
-        return averageRating;
+      let totalWeight = 0;
+      let totalReviews = 0;
+    
+      ratings.forEach((rating) => {
+    
+        const weightMultipliedByNumber = rating.weight * rating.count;
+        totalWeight += weightMultipliedByNumber;
+        totalReviews += rating.count;
+      });
+    
+      const averageRating = totalReviews > 0 ? totalWeight / totalReviews : 0;
+    
+      return averageRating;
     }
 
     const weightedAvr = calcAverageRating(ratings);
