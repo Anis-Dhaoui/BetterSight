@@ -32,7 +32,7 @@ const Header = (props) => {
         <NavbarBrand href="/home">
             <img src="../logo.png" alt="BetterSight" width="50px" height="30px" />
         </NavbarBrand>
-        <NavbarToggler onClick={toggle}/>
+        <NavbarToggler onClick={toggle} style={{backgroudColor:"white"}} />
         <Collapse isOpen={isOpen} navbar>
             <Nav navbar className="mx-md-auto">
                 <NavItem className="itemHover">
@@ -79,7 +79,7 @@ const Header = (props) => {
                 </NavItem>
             </Nav>
             <Nav className="mr-3">
-              <NavItem>
+              <NavItem className="d-none d-md-block">
                 <Link to="/incart"><i className="fa fa-cart-plus fa-2x notification mt-n2" />
                   <span className="badge mt-n2">{props.addedToCart.length}</span>
                 </Link>
