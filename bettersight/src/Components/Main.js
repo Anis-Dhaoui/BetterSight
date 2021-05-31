@@ -39,7 +39,7 @@ function Main(props) {
     }   
     return (
         <>{console.log(props.reviews)}
-            <Header />
+            <Header addedToCart={props.products.filter((item) => item.incart)}/>
             <Switch>
                 <Route path="/home" component={() =><Home products={props.products} perPage={9} addToCart={props.addToCart} />} />
                 <Route exact path="/men" component={() => <ShowMenWomenProd products={props.products.filter((item) => item.gender === "Male")} perPage={6} addToCart={props.addToCart} />} />

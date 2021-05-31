@@ -836,45 +836,25 @@ a, a:hover {
   width: 100%;
 }
 
-/* comment Form */
-/* .rating {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  margin: -20px 0 -20px 0;
-}
 
-.rating>input {
-  display: none
-}
-
-.rating>label {
-  position: relative;
-  width: 19px;
-  font-size: 25px;
-  color: #FFD700;
-  cursor: pointer
-}
-
-.rating>label::before {
-  content: "\2605";
+/* Begin cart notification */
+.badge{
   position: absolute;
-  opacity: 0
+  top: 18px;
+  right: 10px;
+  padding: 5px 8px;
+  border-radius: 100%;
+  background-color: rgb(0, 17, 255);
+  color: white;
 }
+/* End cart notification */
 
-.rating>label:hover:before,
-.rating>label:hover~label:before {
-  opacity: 1 !important
+.notification{
+  position: absolute;
+  top: 30px;
+  right: 28px;
+  display: inline-block;
 }
-
-.rating>input:checked~label:before {
-  opacity: 1
-}
-
-.rating:hover>input:checked~label:before {
-  opacity: 0.4
-} */
-/* End Review */
 
 
 

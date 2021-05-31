@@ -80,7 +80,9 @@ const Header = (props) => {
             </Nav>
             <Nav className="mr-3">
               <NavItem>
-                <Link to="/incart"><i className="fa fa-cart-plus fa-2x" /> </Link>
+                <Link to="/incart"><i className="fa fa-cart-plus fa-2x notification mt-n2" />
+                  <span className="badge mt-n2">{props.addedToCart.length}</span>
+                </Link>
               </NavItem>
             </Nav>
         </Collapse>
