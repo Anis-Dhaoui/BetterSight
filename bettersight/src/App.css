@@ -367,16 +367,16 @@ a, a:hover {
 
 /* Begin Cart List */
   
-  .clearfix {
+  /* .clearfix {
     content: "";
     display: table;
     clear: both;  
-  }
+  } */
   
   #cart-list .container {
     font-family: 'Open Sans', sans-serif;
-    margin: 0 auto;
-    width: 980px;
+    /* margin: 0 auto; */
+    /* width: 980px; */
   }
   
   #cart {
@@ -406,17 +406,17 @@ a, a:hover {
     background-color: #fff;
     border: 1px solid #ccc;
     border-style: none none solid none;
-    float: left;
+    /* float: left; */
   }
   
   .product header {
     background: #000;
-    margin: 0 1% 20px 0;
+    margin: 0 0px 20px 0;
     overflow: hidden;
     padding: 0;
     position: relative;
-    width: 24%;
-    height: 195px;
+    /* width: 24%; */
+    height: 100%;
   }
   
   .product header:hover img {
@@ -444,8 +444,8 @@ a, a:hover {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     height: 140px;
-    padding: 0 20px;
-    width: 75%;
+    /* padding: 0 20px; */
+    /* width: 75%; */
   }
   
   .product h1 {
@@ -456,31 +456,27 @@ a, a:hover {
   }
   
   .product footer.content {
-    height: 50px;
-    margin: 6px 0 0 0;
+    height: 62px;
     padding: 0;
   }
   
   .product footer .price {
-    background: #fcfcfc;
+    background: #eaf4f5;
     color: #000;
-    float: right;
-    font-size: 15px;
-    font-weight: 300;
+    font-size: 18px;
+    font-weight: 500;
     line-height: 49px;
     margin: 0;
-    padding: 0 30px;
+    padding: 0 10px;
   }
   
   .product footer .full-price {
     background: #007bff;
     color: #fff;
-    float: right;
     font-size: 22px;
-    font-weight: 300;
+    font-weight: 600;
     line-height: 49px;
     margin: 0;
-    padding: 0 30px;
   
     -webkit-transition: margin .15s linear;
     -moz-transition: margin .15s linear;
@@ -568,13 +564,13 @@ a, a:hover {
     margin: 15px 0;
   }
   
-  .left {
+  /* .left {
     float: left;
   }
   
   .right {
     float: right;
-  }
+  } */
 /* End Cart List  */
 
 

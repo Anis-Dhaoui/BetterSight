@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function CartList(props) {     console.log(props.addedToCart);
+export default function CartList(props) {
 
     const removeProduct = (target) =>{
         props.remove(target)
@@ -27,8 +27,8 @@ export default function CartList(props) {     console.log(props.addedToCart);
 
     const cartList = props.addedToCart.map((item) =>{
         return(
-            <article className="product" key={item.id}>
-                <header>
+            <article className="row product" key={item.id}>
+                <header className="col-12 col-md-3">
                     <img src={item.image_1} alt={item.product_name} />
 
                     <button onClick={() => removeProduct(item.id)} className="btn btn-outline-danger">
@@ -36,62 +36,62 @@ export default function CartList(props) {     console.log(props.addedToCart);
                     </button>
                 </header>
         
-                <div className="content">
-        
-                    <h1>{item.product_name}</h1>
-                    <p>
-                        {item.description}
-                    </p>
+                <div className="col-12 col-md-9 content">
+                    <div className="row">
+                        <h1 className="col-12 pl-4"> {item.product_name} </h1>
+                        <p className="col-12 pl-4"> {item.description} </p>
+
+                        <footer className="col-12 content qty">
+                            <div className="row">
+                                <div className="col-12 col-md-8">
+                                    <span 
+                                        onClick={() => qtyMinus(item.id)} 
+                                        className={item.qty > 1 ? "qt-minus" : "qt-minus disabled-aria"}
+                                    >
+                                        -
+                                    </span>
+
+                                    <span className="qt">{item.qty}</span>
+
+                                    <span onClick={() => qtyPlus(item.id)} className="qt-plus">+</span>
+                                </div>
                         
+                                <h2 className=" col-12 col-md-2 text-center text-warning price ml-n4">
+                                    {item.price}
+                                </h2>
+                                <h2 className="col-12 col-md-2 text-center full-price">
+                                    &#36;{item.total_price.toFixed(6).replace(/\.?0*$/,'')}
+                                </h2>
+                            </div>
+                        </footer>
+                    </div>                       
                 </div>
         
-                <footer className="content qty">
-                    <span 
-                        onClick={() => qtyMinus(item.id)} 
-                        className={item.qty > 1 ? "qt-minus" : "qt-minus disabled-aria"}
-                    >
-                        -
-                    </span>
-
-                    <span className="qt">{item.qty}</span>
-
-                    <span onClick={() => qtyPlus(item.id)} className="qt-plus">+</span>
-            
-                    <h2 className="full-price">
-                       &#36;{item.total_price.toFixed(6).replace(/\.?0*$/,'')}
-                    </h2>
-            
-                    <h2 className="price">
-                        {item.price}
-                    </h2>
-                </footer>
             </article>    
         )
     });
 
     return (
-        <div id="cart-list">
-            <div  className="container">
-            <section id="cart"> 
-                {props.addedToCart.length !== 0 ? cartList : <h1 className="text-capitalize text-center text-info">your shopping cart is empty</h1>}
-            </section>
-        </div>
-        
-        <footer id="site-footer">
-            <div className="container clearfix">
-                <div className="left">
+        <div id="cart-list" className="container">
+            <div  className="row">
+                <section id="cart" className="col-12 mt-5"> 
+                    {props.addedToCart.length !== 0 ? cartList : <h1 className="text-capitalize text-center text-info">your shopping cart is empty</h1>}
+                </section>
+            </div>
+            
+            <footer id="site-footer" className="row mb-2 mb-md-auto">
+                <div className="col-12 col-md-8">
                     <h2 className="subtotal">Subtotal: <span>&#36;{subTotal.toFixed(2).replace(/\.?0*$/,'')}</span></h2>
                     <h3 className="tax">Taxes (6%): <span>&#36;{tax.toFixed(2).replace(/\.?0*$/,'')}</span></h3>
                     <h3 className="shipping">Shipping: <span>&#36;10.00</span></h3>
                 </div>
             
-                <div className="right">
+                <div className="col-12 col-md-4">
                     <h1 className="total">Total: <span>&#36;{total.toFixed(2).replace(/\.?0*$/,'')}</span></h1>
                     <button className="btn btn-outline-primary">Checkout</button>
                     <button onClick={() => props.reset()} className="btn btn-outline-danger mt-2">Reset Cart</button>
                 </div>        
-            </div>
-        </footer>    
+            </footer>    
         </div>
     )
 }

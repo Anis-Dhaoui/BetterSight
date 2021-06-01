@@ -36,7 +36,7 @@ const Header = (props) => {
 
         <div className="d-md-none">
           <Link to="/incart"><i className="fa fa-cart-plus fa-2x notification mt-n2" style={{margin:"20px 150px -50px 0"}} />
-            <span className="badge mt-n2" style={{margin:"20px 150px -50px 0"}}>{props.cart.length}</span>
+            <span className={props.cart.length > 0 ? "badge mt-n2" : "d-none"} style={{margin:"20px 150px -50px 0"}}>{props.cart.length}</span>
           </Link>
         </div>
 
@@ -89,7 +89,7 @@ const Header = (props) => {
             <Nav className="mr-3">
               <NavItem className="d-none d-md-block">
                 <Link id="cart-icon" to="/incart"><i className="fa fa-cart-plus fa-2x notification mt-n2" />
-                  <span className="badge mt-n2">{props.cart.length}</span>
+                  <span className={props.cart.length > 0 ? "badge mt-n2" : "d-none"} >{props.cart.length}</span>
                 </Link>
               </NavItem>
             </Nav>
