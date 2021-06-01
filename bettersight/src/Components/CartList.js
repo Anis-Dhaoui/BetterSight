@@ -27,23 +27,26 @@ export default function CartList(props) {
 
     const cartList = props.addedToCart.map((item) =>{
         return(
-            <article className="row product" key={item.id}>
+            <article className="row product pt-3" key={item.id}>
                 <header className="col-12 col-md-3">
                     <img src={item.image_1} alt={item.product_name} />
 
-                    <button onClick={() => removeProduct(item.id)} className="btn btn-outline-danger">
+                    <button onClick={() => removeProduct(item.id)} className="btn btn-outline-danger d-none d-sm-block">
                         Remove product
                     </button>
+                    <span onClick={() => removeProduct(item.id)} className="btnx fa fa-trash del-btn d-sm-none">
+                    </span>
                 </header>
         
                 <div className="col-12 col-md-9 content">
                     <div className="row">
-                        <h1 className="col-12 pl-4"> {item.product_name} </h1>
-                        <p className="col-12 pl-4"> {item.description} </p>
-
-                        <footer className="col-12 content qty">
+                        <div style={{height:"131px"}} className="title-info">
+                            <h1 className="col-12 pl-4"> {item.product_name} </h1>
+                            <p className="col-12 pl-4"> {item.description} </p>
+                        </div>
+                        <footer className="col-12 content">
                             <div className="row">
-                                <div className="col-12 col-md-8">
+                                <div className="col-12 col-md-8 order-12 order-sm-0 d-flex justify-content-center justify-content-md-start">
                                     <span 
                                         onClick={() => qtyMinus(item.id)} 
                                         className={item.qty > 1 ? "qt-minus" : "qt-minus disabled-aria"}
@@ -56,7 +59,7 @@ export default function CartList(props) {
                                     <span onClick={() => qtyPlus(item.id)} className="qt-plus">+</span>
                                 </div>
                         
-                                <h2 className=" col-12 col-md-2 text-center text-warning price ml-n4">
+                                <h2 className=" col-12 col-md-2 order-0 order-sm-0 text-center text-warning price ml-md-n4">
                                     {item.price}
                                 </h2>
                                 <h2 className="col-12 col-md-2 text-center full-price">
@@ -66,19 +69,15 @@ export default function CartList(props) {
                         </footer>
                     </div>                       
                 </div>
-        
             </article>    
         )
     });
 
     return (
         <div id="cart-list" className="container">
-            <div  className="row">
-                <section id="cart" className="col-12 mt-5"> 
-                    {props.addedToCart.length !== 0 ? cartList : <h1 className="text-capitalize text-center text-info">your shopping cart is empty</h1>}
-                </section>
+            <div id="prod-list" className="row">
+                {props.addedToCart.length !== 0 ? cartList : <h1 className="text-capitalize text-center text-info mt-5">your shopping cart is empty</h1>}
             </div>
-            
             <footer id="site-footer" className="row mb-2 mb-md-auto">
                 <div className="col-12 col-md-8">
                     <h2 className="subtotal">Subtotal: <span>&#36;{subTotal.toFixed(2).replace(/\.?0*$/,'')}</span></h2>
