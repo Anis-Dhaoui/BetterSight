@@ -22,7 +22,7 @@ export default function RenderProducts(products, perPage, addToCart) {
     };
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid render-prod">
             <div className="row">
                 {data}
             </div>

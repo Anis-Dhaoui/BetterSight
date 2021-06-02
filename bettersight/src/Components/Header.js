@@ -34,9 +34,10 @@ const Header = (props) => {
           <img src="../logo.png" alt="BetterSight" width="50px" height="30px" />
         </NavbarBrand>
 
-        <div className="d-md-none">
-          <Link to="/incart"><i className="fa fa-cart-plus fa-2x notification mt-n2" style={{margin:"20px 150px -50px 0"}} />
-            <span className={props.cart.length > 0 ? "badge mt-n2" : "d-none"} style={{margin:"20px 150px -50px 0"}}>{props.cart.length}</span>
+        <div className="d-md-none mt-2">
+          <Link to="/incart">
+            <i className="fa fa-cart-plus fa-2x notification"/>
+            <i className={props.cart.length > 0 ? "badge" : "d-none"}>{props.cart.length}</i>
           </Link>
         </div>
 
