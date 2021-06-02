@@ -904,9 +904,7 @@ a, a:hover {
     height: auto;
   }
   .product footer .price, .product footer .full-price{
-    /* max-width: 343px; */
-    max-width: 1000%;
-
+    max-width: 100%;
   }
   .title-info{
     margin-bottom: 60px;
@@ -918,7 +916,7 @@ a, a:hover {
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) and (min-width: 576px) {
   .add-cart-btn .btn{
       display: block;
       width: 100%;
@@ -938,6 +936,10 @@ a, a:hover {
 
   #post {
     width: 100%
+  }
+
+  .product footer .price, .product footer .full-price{
+    max-width: 32%;
   }
 
 }
