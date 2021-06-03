@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import CartList from './CartList';
 import { addToCart, removeFromCart, addQuantity, subtractQuantity, emptyCart, postNewReview } from '../Redux/Actions';
 import ProductDetail from './ProductDetail';
+import Aboutus from './Aboutus';
 
 const mapStateToProps = (state) =>({
     products: state.products.products,
@@ -58,6 +59,7 @@ function Main(props) {
                                         />}
                 />
                 <Route path="/detail/:prodId" component={productInfo} />
+                <Route path="/aboutus" component={ Aboutus } />
                 <Redirect to="/home" />
             </Switch>
             <Footer />

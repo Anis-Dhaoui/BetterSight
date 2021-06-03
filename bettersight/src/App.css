@@ -232,10 +232,8 @@ button.navItem.dropdownItem.btn.btn-secondary:focus{
   transition: all 1s ease;
   z-index: 1000;
 }
-#navArea.is-sticky .navItem,
-#navArea.is-sticky .navbar-brand,
-#navArea.is-sticky .dropdownItem {
-  padding: 5px 10px 5px 10px;
+#navArea.is-sticky .navItem{
+  padding: 5px 10px;
 }
 #navArea.is-sticky .dropdownItem:hover,
 #navArea.is-sticky .itemHover:hover{
@@ -844,7 +842,25 @@ a, a:hover {
 
 /* End cart notification */
 
+/* Begin About us */
+.paragraph p{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
+.paragraph{
+  margin-top: 20px;
+  padding-top: 15px;
+}
+.aboutus-content .nav-link{
+  text-decoration: none;
+  color: rgb(53, 5, 97);
+  cursor: pointer;
+}
+.first-box{padding:10px;background:#9C0;}
+.second-box{padding:10px; background:#39F;}
+.third-box{padding:10px;background:#F66;}
+.fourth-box{padding:10px;background:#6CC;}
+/* End About us */
 
 
 
