@@ -860,6 +860,10 @@ a, a:hover {
 .second-box{padding:10px; background:#39F;}
 .third-box{padding:10px;background:#F66;}
 .fourth-box{padding:10px;background:#6CC;}
+
+#testimonials .card{
+  padding: 2px;
+}
 /* End About us */
 
 
