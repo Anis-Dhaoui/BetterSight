@@ -58,12 +58,12 @@ export default function Aboutus (){
                     <div class="col-sm-3 col-xs-6 first-box">
                         <h1><span class="glyphicon glyphicon-earphone"></span></h1>
                         <h3>Phone</h3>
-                        <p>+880-1700-987654</p><br/>
+                        <p>+080-1700-987654</p><br/>
                     </div>
                     <div class="col-sm-3 col-xs-6 second-box">
                         <h1><span class="glyphicon glyphicon-home"></span></h1>
                         <h3>Location</h3>
-                        <p>1036 Gulshan Road</p><br/>
+                        <p>1036 Voluptatum Road</p><br/>
                     </div>
                     <div class="col-sm-3 col-xs-6 third-box">
                         <h1><span class="glyphicon glyphicon-send"></span></h1>
@@ -73,7 +73,7 @@ export default function Aboutus (){
                     <div class="col-sm-3 col-xs-6 fourth-box">
                         <h1><span class="glyphicon glyphicon-leaf"></span></h1>
                         <h3>Web</h3>
-                        <p>www.yourdomain.com</p><br/>
+                        <p>www.bettersight.com</p><br/>
                     </div>
                 </div>
             </Col>
@@ -81,19 +81,25 @@ export default function Aboutus (){
         </TabPane>
         <TabPane tabId="2">
           <Row>
-            <Col sm="6">
-              <Card body>
-                <CardTitle>Special Title Treatment</CardTitle>
-                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                <Button>Go somewhere</Button>
-              </Card>
-            </Col>
-            <Col sm="6">
-              <Card body>
-                <CardTitle>Special Title Treatment</CardTitle>
-                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                <Button>Go somewhere</Button>
-              </Card>
+            <Col className="paragraph">
+                <h3>Why choose BeeterSight</h3>
+                <h4>100% Prescription Accuracy Guaranteed and Quality Control That Is Second to None!</h4>
+                <p>
+                    Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+                </p>
+                <br/>
+                <h4>Unbeatable Online Savings - Here's How We Do It:</h4>
+                <p>
+                    omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+                </p>
+                <h4>A Scratch Proof Multi-Hard Coating!</h4>
+                <p>
+                    Vivamus tempor in velit eget rhoncus. In eget dui felis. Nunc lacinia malesuada erat, id pulvinar augue vulputate sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras nec libero at orci laoreet pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec finibus gravida tellus in sollicitudin.
+                </p>
+                <h4>Free Hard Case, Bags and Lens Cloth</h4>
+                <p>
+                    Vivamus maximus dapibus tellus, vel molestie sapien. Nam vehicula, augue a varius imperdiet, orci justo placerat magna, quis consequat nisl felis vitae neque. Sed malesuada eros vitae lectus sollicitudin, sit amet laoreet eros volutpat. 
+                </p>
             </Col>
           </Row>
         </TabPane>
