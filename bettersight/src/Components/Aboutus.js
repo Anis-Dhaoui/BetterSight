@@ -1,40 +1,58 @@
 import React, { useEffect, useState } from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { TabContent, TabPane, NavLink, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import * as $ from 'jquery';
+// import {url} from '../sharedData/Url';
 
-export default function Aboutus (){
+export default function Aboutus (props){
 
-  const [activeTab, setActiveTab] = useState('1');
+  const [activeTab, setActiveTab] = useState('3');
 
   const toggle = tab => {
     if(activeTab !== tab) setActiveTab(tab);
   }
 
-  useEffect(() => {
-    window.$('#feedbackCarousel').carousel({
-    interval: 2000
-    })
-  
-    $('.carousel .carousel-item').each(function(){
-        var minPerSlide = 3;
-        var next = $(this).next();
-        if (!next.length) {
-        next = $(this).siblings(':first');
-        }
-        next.children(':first-child').clone().appendTo($(this));
-        
-        for (var i=0;i<minPerSlide;i++) {
-            next=next.next();
+// Some jquery to set time between slide show and to show 3 cards together while sliding
+    useEffect(() => {
+        window.$('#feedbackCarousel').carousel({
+        interval: 5000
+        })
+    
+        $('.carousel .carousel-item').each(function(){
+            var minPerSlide = 3;
+            var next = $(this).next();
             if (!next.length) {
-                next = $(this).siblings(':first');
+            next = $(this).siblings(':first');
             }
-            
             next.children(':first-child').clone().appendTo($(this));
-        }
-    });
+            
+            for (var i=0;i<minPerSlide;i++) {
+                next=next.next();
+                if (!next.length) {
+                    next = $(this).siblings(':first');
+                }
+                
+                next.children(':first-child').clone().appendTo($(this));
+            }
+        });
+    }, []);
 
-  }, [])
+//Render carousel Items that contains testimonials
+    const renderCarouselItems = props.testimonials.map((item) =>{
+        return(
+            <div className={item.id === 0 ? "carousel-item active" : "carousel-item"} key={item.id}>
+            <div className="col-md-4 mb-3">
+                <div className="card" style={{height:"450px", minHeight:"450px"}}>
+                    <img className="img-fluid" alt={item.photo} src={item.photo} />
+                    <div className="card-body">
+                        <h5 className="card-title text-primary">{item.first_name + " " + item.last_name}</h5>
+                        <p className="card-text">{item.feedback}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        )
+    })
   
   return (
     <div className="container my-5 aboutus-content">
@@ -151,84 +169,9 @@ export default function Aboutus (){
                             <div id="feedbackCarousel" className="carousel slide w-100" data-ride="carousel">
 
                                 <div className="carousel-inner w-100">
-                                    <div className="carousel-item active">
-                                        <div className="col-md-4 mb-3">
-                                            <div className="card">
-                                                <img className="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d" />
-                                                <div className="card-body">
-                                                    <h5 className="card-title">Special title treatment</h5>
-                                                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="carousel-item">
-                                        <div className="col-md-4 mb-3">
-                                            <div className="card">
-                                                <img className="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4" />
-                                                <div className="card-body">
-                                                    <h5 className="card-title">Special title treatment</h5>
-                                                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="carousel-item">
-                                        <div className="col-md-4 mb-3">
-                                            <div className="card">
-                                                <img className="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840" />
-                                                <div className="card-body">
-                                                    <h5 className="card-title">Special title treatment</h5>
-                                                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="carousel-item">
-                                        <div className="col-md-4 mb-3">
-                                            <div className="card">
-                                                <img className="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e" />
-                                                <div className="card-body">
-                                                    <h5 className="card-title">Special title treatment</h5>
-                                                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="carousel-item">
-                                        <div className="col-md-4 mb-3">
-                                            <div className="card">
-                                                <img className="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23" />
-                                                <div className="card-body">
-                                                    <h5 className="card-title">Special title treatment</h5>
-                                                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="carousel-item">
-                                        <div className="col-md-4 mb-3">
-                                            <div className="card">
-                                                <img className="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532777946373-b6783242f211?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=8ac55cf3a68785643998730839663129" />
-                                                <div className="card-body">
-                                                    <h5 className="card-title">Special title treatment</h5>
-                                                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="carousel-item">
-                                        <div className="col-md-4 mb-3">
-                                            <div className="card">
-                                                <img className="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532763303805-529d595877c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=5ee4fd5d19b40f93eadb21871757eda6" />
-                                                <div className="card-body">
-                                                    <h5 className="card-title">Special title treatment</h5>
-                                                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {renderCarouselItems}
                                 </div>
+
                             </div>
                         </div>
                     </div>

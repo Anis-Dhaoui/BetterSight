@@ -97,3 +97,22 @@ export const ReviewsRed = (state = reviews, action) => {
           return state;
   }
 };
+
+/////////////////// Testimonials Reducer //////////////////////
+export const TestimonialsRed = (state = [], action) => {
+  switch (action.type) {
+      case actionType.ADD_TESTIMONIALS:
+          return action.payload;
+          
+
+      // case actionType.POST_REVIEW:
+      //   const tempState = action.payload;
+      //   const newId = state.length;
+      //   tempState.id = newId;
+
+      //     return state = state.concat(tempState);
+                  
+      default:
+          return state;
+  }
+};

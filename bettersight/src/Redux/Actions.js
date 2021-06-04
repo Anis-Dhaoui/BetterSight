@@ -1,4 +1,5 @@
 import * as actionType from './ActionTypes';
+import {url} from '../sharedData/Url';
 
 export const addToCart = id => {
     return {
@@ -50,4 +51,27 @@ export const postNewReview = (prodId, firstName, lastName, email, comment, date,
         date:  date,
         rating: rating
     }
+});
+
+/////////////////////////////////{ FETCH TESTIMONIALS }/////////////////////////////////
+export const fetchTestimonials = () => (dispatch) =>{
+    fetch(url)
+    .then(res => {
+        if(res.ok){
+            return res;
+        }else
+        var error = new Error('Error ' + res.status + ' ' + res.statusText);
+        throw error;
+    }, error =>{
+    var disconnected = new Error('Error ' + error.message + ' (Cannot connect to the server)')
+    throw disconnected
+    })
+    .then(res => res.json())
+    .then(data => dispatch(addTestimonials(data)))
+    .catch(error => {alert('Error:\n' + error.message)})
+};
+
+export const addTestimonials = (testimonials) =>({
+    type: actionType.ADD_TESTIMONIALS,
+    payload: testimonials
 });

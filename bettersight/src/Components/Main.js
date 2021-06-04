@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
@@ -6,13 +6,14 @@ import ShowMenWomenProd from './MenWomenProducts';
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CartList from './CartList';
-import { addToCart, removeFromCart, addQuantity, subtractQuantity, emptyCart, postNewReview } from '../Redux/Actions';
+import { addToCart, removeFromCart, addQuantity, subtractQuantity, emptyCart, postNewReview, fetchTestimonials } from '../Redux/Actions';
 import ProductDetail from './ProductDetail';
 import Aboutus from './Aboutus';
 
 const mapStateToProps = (state) =>({
     products: state.products.products,
-    reviews: state.reviews
+    reviews: state.reviews,
+    testimonials: state.testimonials
 });
 
 const mapDispatchToProps = dispatch =>({
@@ -21,11 +22,15 @@ const mapDispatchToProps = dispatch =>({
     addQty: (target) => {dispatch(addQuantity(target))},
     subQty: (target) => {dispatch(subtractQuantity(target))},
     resetCart: (target) => {dispatch(emptyCart(target))},
-    postNewReview: (prodId, firstName, lastName, email, comment, date, rating) => {dispatch(postNewReview(prodId, firstName, lastName, email, comment, date, rating ))}
+    postNewReview: (prodId, firstName, lastName, email, comment, date, rating) => {dispatch(postNewReview(prodId, firstName, lastName, email, comment, date, rating ))},
+    fetchTestimonials: () =>{dispatch(fetchTestimonials())}
 });
 
-
 function Main(props) {
+
+    useEffect(() => {
+        props.fetchTestimonials();
+    }, []);
 
     const productInfo = ({match}) =>{
         return(
@@ -39,7 +44,7 @@ function Main(props) {
         )
     }   
     return (
-        <>{console.log(props.reviews)}
+        <>{console.log(props.testimonials)}
             <Header cart={props.products.filter((item) => item.incart)}/>
             <Switch>
                 <Route path="/home" component={() =><Home products={props.products} perPage={9} addToCart={props.addToCart} />} />
@@ -59,7 +64,7 @@ function Main(props) {
                                         />}
                 />
                 <Route path="/detail/:prodId" component={productInfo} />
-                <Route path="/aboutus" component={ Aboutus } />
+                <Route path="/aboutus" component={ () => <Aboutus testimonials={props.testimonials}/> } />
                 <Redirect to="/home" />
             </Switch>
             <Footer />
