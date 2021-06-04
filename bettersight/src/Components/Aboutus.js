@@ -177,6 +177,23 @@ export default function Aboutus (props){
                     </div>
                 </div>
             </section>
+            <section id="testimonial-form">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-8">
+                        <h2 className="title pl-3 pt-0 pb-3">Contact us</h2>
+                        <form>
+                            <div className="form-group col-md-12"> <input type="text" className="form-control" placeholder="First Name" /> </div>
+                            <div className="form-group col-md-12"> <input type="email" className="form-control" placeholder="Last Name" /> </div>
+                            <div className="form-group col-md-12"> <textarea rows="6" type="textarea" className="form-control" placeholder="Testimonial" /> </div>
+                            <div className="form-group col-md-12"> <button type="submit" className="btn btn-dark btn-block">Send</button></div>
+                            <div className="form-group col-md-12"> <button type="reset" className="btn btn-danger btn-block">Reset</button></div>
+                        </form>                   
+                    </div>
+                    <div className="col-md-4"> <img alt="xxxx" src="https://i.imgur.com/hTnBa7t.png" width="100%" height="100%" /> </div>
+                </div>
+            </div>
+            </section>
         </TabPane>
       </TabContent>
     </div>
