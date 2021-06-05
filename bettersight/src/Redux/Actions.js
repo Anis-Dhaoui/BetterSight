@@ -75,3 +75,34 @@ export const addTestimonials = (testimonials) =>({
     type: actionType.ADD_TESTIMONIALS,
     payload: testimonials
 });
+
+/////////////////////////////////{ POST TESTIMONIAL }/////////////////////////////////
+export const postTestimonial = (testimonial) => (dispatch) =>{
+
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(testimonial),
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        credentials: 'same-origin'
+    })
+    .then(res => {
+        if(res.ok){
+            return res;
+        }else
+        var error = new Error('Error ' + res.status + ' ' + res.statusText);
+        throw error;
+    }, error =>{
+    var disconnected = new Error('Error ' + error.message + ' (Cannot connect to the server)')
+    throw disconnected
+    })
+    .then(res => res.json())
+    .then(data => dispatch(postNewTestimonial(data)))
+    .catch(error => {alert('Error:\n' + error.message)})
+};
+
+export const postNewTestimonial = (testimonial) =>({
+    type: actionType.POST_TESTIMONIAL,
+    payload: testimonial
+});

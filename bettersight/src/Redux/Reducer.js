@@ -105,12 +105,12 @@ export const TestimonialsRed = (state = [], action) => {
           return action.payload;
           
 
-      // case actionType.POST_REVIEW:
-      //   const tempState = action.payload;
-      //   const newId = state.length;
-      //   tempState.id = newId;
+      case actionType.POST_TESTIMONIAL:
+        // const tempState = action.payload;
+        // const newId = state.length;
+        // tempState.id = newId;
 
-      //     return state = state.concat(tempState);
+          return state = state.concat(action.payload);
                   
       default:
           return state;

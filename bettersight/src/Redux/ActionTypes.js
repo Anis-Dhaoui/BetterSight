@@ -4,9 +4,8 @@ export const ADD_QUANTITY = 'ADD_QUANTITY';
 export const SUB_QUANTITY = 'SUB_QUANTITY';
 export const EMPTY_CART = 'EMPTY_CART';
 
-
 export const ADD_REVIEWS = 'ADD_REVIEWS';
 export const POST_REVIEW = 'POST_REVIEW';
 
 export const ADD_TESTIMONIALS = 'ADD_TESTIMONIALS';
-// export const POST_TESTIMONIAL = 'POST_TESTIMONIAL';
+export const POST_TESTIMONIAL = 'POST_TESTIMONIAL';

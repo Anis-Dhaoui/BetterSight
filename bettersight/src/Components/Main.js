@@ -6,9 +6,10 @@ import ShowMenWomenProd from './MenWomenProducts';
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CartList from './CartList';
-import { addToCart, removeFromCart, addQuantity, subtractQuantity, emptyCart, postNewReview, fetchTestimonials } from '../Redux/Actions';
+import { addToCart, removeFromCart, addQuantity, subtractQuantity, emptyCart, postNewReview, fetchTestimonials, postTestimonial } from '../Redux/Actions';
 import ProductDetail from './ProductDetail';
 import Aboutus from './Aboutus';
+import { actions } from 'react-redux-form';
 
 const mapStateToProps = (state) =>({
     products: state.products.products,
@@ -23,13 +24,16 @@ const mapDispatchToProps = dispatch =>({
     subQty: (target) => {dispatch(subtractQuantity(target))},
     resetCart: (target) => {dispatch(emptyCart(target))},
     postNewReview: (prodId, firstName, lastName, email, comment, date, rating) => {dispatch(postNewReview(prodId, firstName, lastName, email, comment, date, rating ))},
-    fetchTestimonials: () =>{dispatch(fetchTestimonials())}
+    fetchTestimonials: () =>{dispatch(fetchTestimonials())},
+    postTestimonial: (value) =>{dispatch(postTestimonial(value))},
+    reseTestimonialForm: () => {dispatch(actions.reset("testimonial"))}
 });
 
 function Main(props) {
 
     useEffect(() => {
         props.fetchTestimonials();
+    /* eslint-disable-next-line*/
     }, []);
 
     const productInfo = ({match}) =>{
@@ -42,7 +46,8 @@ function Main(props) {
                 postReview={props.postNewReview}
             />
         )
-    }   
+    };  
+
     return (
         <>{console.log(props.testimonials)}
             <Header cart={props.products.filter((item) => item.incart)}/>
@@ -64,7 +69,7 @@ function Main(props) {
                                         />}
                 />
                 <Route path="/detail/:prodId" component={productInfo} />
-                <Route path="/aboutus" component={ () => <Aboutus testimonials={props.testimonials}/> } />
+                <Route path="/aboutus" component={ () => <Aboutus testimonials={props.testimonials} postTestimonial={props.postTestimonial} reseTestimonialForm={props.reseTestimonialForm} /> } />
                 <Redirect to="/home" />
             </Switch>
             <Footer />
