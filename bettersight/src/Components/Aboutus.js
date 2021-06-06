@@ -3,7 +3,7 @@ import { TabContent, TabPane, NavLink, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import * as $ from 'jquery';
 // import {url} from '../sharedData/Url';
-import { Form, Control, actions } from 'react-redux-form';
+import { Form, Control } from 'react-redux-form';
 
 export default function Aboutus (props){
 
@@ -57,9 +57,9 @@ export default function Aboutus (props){
 //Handling submit form button
     const handleSubmit = (value) =>{
         props.postTestimonial(value);
-        props.reseTestimonialForm();
+        // props.reseTestimonialForm();
         alert("Thank you for your testimonial,\n it's highly appreciated");
-        console.log(value);
+        console.log(value.photo[0]);
     }
   
   return (
@@ -188,21 +188,24 @@ export default function Aboutus (props){
             <section id="testimonial-form">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-8">
+                    <div className="col-md-6">
                         <h2 className="title pl-3 pt-0 pb-3">Contact us</h2>
                         <Form model="testimonial" onSubmit={(value) => handleSubmit(value)}>
                             {/* eslint-disable*/}
-                            <div className="form-group col-md-12"> 
+                            <div className="form-group col-md-12 mb-2"> 
                                 <Control.text model=".first_name" name="first_name" id="first_name" className="form-control" placeholder="First Name" />
                             </div>
-                            <div className="form-group col-md-12">
+                            <div className="form-group col-md-12 mb-2">
                                 <Control.text model=".last_name" name="last_name" id="last_name" className="form-control" placeholder="Last Name" />
                             </div>
-                            <div className="form-group col-md-12">
+                            <div className="form-group col-md-12 mb-3">
                                 <Control.textarea model=".feedback" name="feedback" id="feedback" rows="6" className="form-control" placeholder="Testimonial" />
                             </div>
+                            <div className="form-group col-md-12 mb-3">
+                                <Control.file model=".photo" name="photo" id="photo" className="form-control" />
+                            </div>
                             {/* eslint-disable*/}
-                            <div className="form-group col-md-12"> 
+                            <div className="form-group col-md-12 mb-4"> 
                                 <button type="submit" className="btn btn-dark btn-block">Send</button>
                             </div>
                             <div className="form-group col-md-12">
@@ -210,7 +213,7 @@ export default function Aboutus (props){
                             </div>
                         </Form>                   
                     </div>
-                    <div className="col-md-4"> <img alt="xxxx" src="https://i.imgur.com/hTnBa7t.png" width="100%" height="100%" /> </div>
+                    <div className="col-md-6"> <img alt="xxxx" src="https://i.imgur.com/hTnBa7t.png" width="100%" height="100%" /> </div>
                 </div>
             </div>
             </section>

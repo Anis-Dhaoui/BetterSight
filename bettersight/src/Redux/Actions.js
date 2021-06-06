@@ -55,7 +55,7 @@ export const postNewReview = (prodId, firstName, lastName, email, comment, date,
 
 /////////////////////////////////{ FETCH TESTIMONIALS }/////////////////////////////////
 export const fetchTestimonials = () => (dispatch) =>{
-    fetch(url)
+    fetch(url + 'testimonials')
     .then(res => {
         if(res.ok){
             return res;
@@ -79,9 +79,30 @@ export const addTestimonials = (testimonials) =>({
 /////////////////////////////////{ POST TESTIMONIAL }/////////////////////////////////
 export const postTestimonial = (testimonial) => (dispatch) =>{
 
-    fetch(url, {
+    const file = testimonial.photo[0];
+    const formData = new FormData();
+    formData.append('img', file);
+
+    fetch("",
+        {
+            method: 'POST',
+            body: formData,
+            // headers: {
+            //   'Content-Type': 'multipart/form-data',
+            // }
+        }
+    )
+    .then(res =>{
+        console.log(res.status);
+    })
+
+    var tempVar = JSON.parse(JSON.stringify(testimonial)) //This line for changing the object from not extensible to extensible or Read only properties to rewritable properties
+    let photoPath = testimonial.photo[0].name;
+    tempVar.photo = photoPath;
+
+    fetch(url + 'testimonials', {
         method: 'POST',
-        body: JSON.stringify(testimonial),
+        body: JSON.stringify(tempVar),
         headers: {
             'Content-Type': 'application/json'
         },
