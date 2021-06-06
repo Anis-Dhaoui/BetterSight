@@ -953,6 +953,36 @@ transform: translateX(0);
 
 }
 
+
+input[type="file"] {
+  display: none;
+}
+
+.img-prev{
+  height: 100%;
+  width: 100%;
+}
+.upload-icon:before{
+  content: "\f093";
+  font-size: 90px;
+  position: absolute;
+  padding-top: 50px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  cursor: pointer;
+  color: #00af17;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: none;
+  transition: .5s ease;
+  background-color: rgba(15, 184, 226, 0.486);
+}
+#preview-upload:hover .upload-icon::before{
+  display: block;
+}
 /* End Testimonial Form */
 
 
