@@ -9,12 +9,7 @@ export const appStore = () => {
             products: ProductsRed,
             reviews: ReviewsRed,
             testimonials: TestimonialsRed,
-            ...createForms({
-                testimonial: {
-                    first_name: "Test",
-                    last_name: "Testest",
-                    feedback: "Testestestestestestestestestestestestestestestestestestestestestestestestestest"
-                }
+            ...createForms({ testimonial: ""
             })
         }),
         applyMiddleware(thunk)
