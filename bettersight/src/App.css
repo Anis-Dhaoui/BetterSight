@@ -900,13 +900,15 @@ a, a:hover {
 .carousel-inner .carousel-item-left{ 
 transform: translateX(0);
 }
-
-
 /* End About us */
+
 
 /* Begin Testimonial Form */
 #testimonial-form img {
-  padding-bottom: 20px
+  padding-bottom: 37px;
+  margin-top: -28px;
+  height: 100%;
+  width: 100%;
 }
 
 #testimonial-form .btn-dark {
@@ -955,13 +957,10 @@ transform: translateX(0);
 
 
 input[type="file"] {
-  display: none;
+  transform: translate(51%, 252px);
+  opacity: 0;
 }
 
-.img-prev{
-  height: 100%;
-  width: 100%;
-}
 .upload-icon:before{
   content: "\f093";
   font-size: 90px;

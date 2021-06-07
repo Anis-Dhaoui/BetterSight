@@ -49,7 +49,7 @@ function Main(props) {
     };  
 
     return (
-        <>{console.log(props.testimonials)}
+        <>
             <Header cart={props.products.filter((item) => item.incart)}/>
             <Switch>
                 <Route path="/home" component={() =><Home products={props.products} perPage={9} addToCart={props.addToCart} />} />

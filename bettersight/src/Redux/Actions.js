@@ -79,22 +79,22 @@ export const addTestimonials = (testimonials) =>({
 /////////////////////////////////{ POST TESTIMONIAL }/////////////////////////////////
 export const postTestimonial = (testimonial) => (dispatch) =>{
 
-    const file = testimonial.photo[0];
-    const formData = new FormData();
-    formData.append('img', file);
+    // const file = testimonial.photo[0];
+    // const formData = new FormData();
+    // formData.append('img', file);
 
-    fetch("",
-        {
-            method: 'POST',
-            body: formData,
-            // headers: {
-            //   'Content-Type': 'multipart/form-data',
-            // }
-        }
-    )
-    .then(res =>{
-        console.log(res.status);
-    })
+    // fetch("",
+    //     {
+    //         method: 'POST',
+    //         body: formData,
+    //         // headers: {
+    //         //   'Content-Type': 'multipart/form-data',
+    //         // }
+    //     }
+    // )
+    // .then(res =>{
+    //     console.log(res.status);
+    // })
 
     var tempVar = JSON.parse(JSON.stringify(testimonial)) //This line for changing the object from not extensible to extensible or Read only properties to rewritable properties
     let photoPath = testimonial.photo[0].name;
