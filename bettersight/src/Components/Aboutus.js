@@ -209,7 +209,7 @@ export default function Aboutus (props){
                     <Form model="testimonial" onSubmit={(value) => handleSubmit(value)}>
                         <div className="row">
                             {/* eslint-disable*/}
-                            <div className="col-12 col-md-6">
+                            <div className="col-12 order-12 order-md-0 col-md-6">
                                 <div className="form-group col-md-12 mb-2">
                                     <Control.text model=".first_name" name="first_name" id="first_name" className="form-control" placeholder="First Name" required />
                                 </div>
@@ -227,14 +227,13 @@ export default function Aboutus (props){
                                     <button type="reset" className="btn btn-danger btn-block">Reset</button>
                                 </div>
                             </div>
-                            <div id="preview-upload" className="form-group col-12 col-md-6 mb-3">
+                            <div id="preview-upload" className="form-group order-0 order-md-12 col-12 col-md-6 mb-3">
                                 <span onClick={() => {console.log(fileInput); fileInput.click()}} className="upload-icon fa"></span>
                                 <Control.file getRef={(input) => fileInput = input} onChange={(e) => handleImgPreview(e)} model=".photo" name="photo" id="photo" required /> 
                                 {imgPrev.imgUrl !== "" ?
                                     <img className="img-prev" src={imgPrev.imgUrl} />
                                     :
                                     <img className="img-prev" src="https://cdn-bfonk.nitrocdn.com/oeSmaXauHxzamSEdExHbYbKSxAcRYCju/assets/static/source/wp-content/uploads/2019/04/c2b68bf6ba939d277f785f3a3c183e4b.placeholder-300x200.png" />
-                                    // <svg className="mt-n5" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 172 172" style={{fill:"#4a90e2"}}><defs><linearGradient x1="64.5" y1="114.99992" x2="150.5" y2="114.99992" gradientUnits="userSpaceOnUse" id="color-1_bjHuxcHTNosO_gr1"><stop offset="0" stopColor="#3ccbf4"></stop><stop offset="1" stopColor="#1fa0e5"></stop></linearGradient><linearGradient x1="85.6775" y1="65.1665" x2="85.6775" y2="150.5" gradientUnits="userSpaceOnUse" id="color-2_bjHuxcHTNosO_gr2"><stop offset="0" stopColor="#28afea"></stop><stop offset="1" stopColor="#0b88da"></stop></linearGradient></defs><g fill="none" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none" style={{mixBlendMode:"normal"}}><path d="M0,172v-172h172v172z" fill="none"></path><g><path d="M143.33333,21.5h-114.66667c-3.95958,0 -7.16667,3.20708 -7.16667,7.16667v107.5c0,3.95958 3.20708,7.16667 7.16667,7.16667h114.66667c3.95958,0 7.16667,-3.20708 7.16667,-7.16667v-107.5c0,-3.95958 -3.20708,-7.16667 -7.16667,-7.16667z" fill="#50e6ff"></path><path d="M114.89958,82.64958c-4.11725,-4.11725 -10.76792,-4.20683 -14.99625,-0.20425l-35.40333,33.54v34.51467h78.83333c3.95958,0 7.16667,-3.20708 7.16667,-7.16667v-25.08333z" fill="url(#color-1_bjHuxcHTNosO_gr1)"></path><circle cx="30.5" cy="14.5" transform="scale(3.58333,3.58333)" r="3.5" fill="#fff8de"></circle><path d="M28.66667,150.5h114.66667c2.90608,0 5.40008,-1.73792 6.52167,-4.22833l-77.95542,-77.95542c-4.11725,-4.11725 -10.76792,-4.20683 -14.99625,-0.20425l-35.40333,33.54v41.68133c0,3.95958 3.20708,7.16667 7.16667,7.16667z" fill="url(#color-2_bjHuxcHTNosO_gr2)"></path></g></g></svg>
                                 }
                             </div>
                         </div>

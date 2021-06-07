@@ -1049,6 +1049,22 @@ input[type="file"] {
     margin: auto 5px;
   }
 
+  input[type="file"] {
+    transform: translate(-16px, 139px);
+  }
+
+  .upload-icon:before{
+    font-size: 50px;
+    padding-top: 20px;
+    top: 45%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    display: block;
+  }
+  
+
 }
 
 @media screen and (max-width: 768px) and (min-width: 576px){
